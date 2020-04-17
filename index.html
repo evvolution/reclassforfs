@@ -1,56 +1,88 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
-<title>佛山复学第一课for高三初三</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-<meta name="renderer" content="webkit">
-<meta name="referrer" content="never">
-<link rel="stylesheet" type="text/css" href="plugins/bootstrap/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="plugins/fullpage/fullpage.min.css">
-<link rel="stylesheet" type="text/css" href="control/style/main.css">
+  <title>佛山复学第一课for高三初三</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta name="renderer" content="webkit">
+  <meta name="referrer" content="never">
+  <link rel="stylesheet" type="text/css" href="plugins/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="plugins/fullpage/fullpage.min.css">
+  <link rel="stylesheet" type="text/css" href="control/style/main.css">
 </head>
+
 <body>
-	<div class="container-fluid">
-        <div id="fullpage">
-            <div class="fspsection section">
-                <h3>第一关</h3>
-                <h5>争做科学防疫小卫士</h5>
-                <p>5题，每题5分，共25分</p>
-            </div>
-            <div class="fspsection section">
-                <div class="questionContent">
-                    123123123123
-                </div>
-            </div>
-            <div class="fspsection section">
-                <div class="questionContent">
-                    <div class="questiondetail">2. 使用过的口罩该怎么处理？</div>
-                    <div class="choices row">
-                        <div class="col-3"><div class="choiceOrder"><img src="img/A.png"></div></div>
-                        <div class="choicedetailcontent col-9"><div class="choicedetail">随意丢弃在垃圾桶</div></div>
-                    </div>
-                    <div class="choices row">
-                        <div class="col-3"><div class="choiceOrder"><img src="img/B.png"></div></div>
-                        <div class="choicedetailcontent col-9"><div class="choicedetail">对于普通人日常使用过的口罩，按照生活垃圾分类的要求，可以直接丢入“其它垃圾”桶，严禁回收及分拣</div></div>
-                    </div>
-                    <div class="choices row">
-                        <div class="col-3"><div class="choiceOrder"><img src="img/C.png"></div></div>
-                        <div class="choicedetailcontent col-9"><div class="choicedetail">继续反复使用</div></div>
-                    </div>
-                </div>
-            </div>
-            <div class="fspsection section">Some section4</div>
+  <div class="container-fluid">
+    <div id="fullpage">
+      <div class="fspsection section">
+        <h3>第一关</h3>
+        <h5>争做科学防疫小卫士</h5>
+        <p>5题，每题5分，共25分</p>
+      </div>
+      <div class="fspsection section">
+        <div class="questionContent">
+          123123123123
         </div>
+      </div>
+      <div class="fspsection section">
+        <div class="questionContent">
+          <div class="questiondetail">2. 使用过的口罩该怎么处理？</div>
+          <div class="choices row nodisplay" id="demo-choice">
+            <div class="col-3">
+              <div class="choiceOrder"><img src="**图片**"></div>
+            </div>
+            <div class="choicedetailcontent col-9">
+              <div class="choicedetail">**答案**</div>
+            </div>
+          </div>
+          <div id="choices-container">
+          </div>
+
+          <div onclick="next()">下一题</div>
+        </div>
+      </div>
+      <div class="fspsection section">Some section4</div>
     </div>
+  </div>
 
 
-    <script type="text/javascript" src="plugins/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="plugins/bootstrap/bootstrap.min.js"></script>
-    <script type="text/javascript" src="plugins/bootstrap/popper.min.js"></script>
-    <script type="text/javascript" src="plugins/fullpage/fullpage.min.js"></script>
-    <script type="text/javascript" src="control/func/info.js"></script>
+  <script type="text/javascript" src="plugins/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="plugins/bootstrap/bootstrap.min.js"></script>
+  <script type="text/javascript" src="plugins/bootstrap/popper.min.js"></script>
+  <script type="text/javascript" src="plugins/fullpage/fullpage.min.js"></script>
+  <script type="text/javascript" src="control/func/info.js"></script>
+  <script type="text/javascript" src="control/func//answer.js"></script>
 
 </body>
+<script type="text/javascript">
+
+  var choices = ["随意丢弃在垃圾桶", "对于普通人日常使用过的口罩，按照生活垃圾分类的要求，可以直接丢入“其它垃圾”桶，严禁回收及分拣", "继续反复使用"]
+  var choicesContainer = document.getElementById('choices-container')
+  var imageArr = ["img/A.png","img/B.png","img/C.png","img/D.png"]
+  choices.forEach((element, index) => {
+    var div = document.createElement("div");
+    var e = document.getElementById("demo-choice");
+    console.log(typeof e)
+    console.log('e.classList')
+    e.classList.remove('display-none')
+    
+    var innerHTML = e.innerHTML;
+    console.log('element' + element)
+    innerHTML = innerHTML.replace("**答案**",element);
+    div.innerHTML = innerHTML.replace("**图片**",imageArr[index]);
+
+    div.id = "choices" + index;
+    div.className = "choices row";
+    choicesContainer.appendChild(div);
+  });
+
+  initQuestion(false)
+
+  function next() {
+
+  }
+</script>
+
 </html>
