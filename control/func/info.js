@@ -6,6 +6,7 @@ var link = "http://server.foshanplus.com/";
 
 $(document).ready(function() {
     $('#fullpage').fullpage();
+    bindgetquestions()
     // bindsubmit()
 });
 
@@ -22,4 +23,14 @@ function bindsubmit(){
 
 		}
 	});
+}
+
+function bindgetquestions(){
+    $.ajax({
+        url: '../../questions4.17.json',
+        async: false,
+        success: function (data) {
+            console.log(data);
+        }
+    });
 }
