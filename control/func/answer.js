@@ -42,9 +42,19 @@ function multipleSelection(e) {
 
 // 初始化选项 问题
 function initChoicesView(exercise) {
+  var passTitleDiv = document.getElementById('passTitle')
+  var passDescDiv = document.getElementById('passDesc')
+  var passPointDiv = document.getElementById('passPoint')
+  var passFinishDiv = document.getElementById('passFinish')
+  passTitleDiv.innerHTML = infoArr[passIndex].passTitle
+  passDescDiv.innerHTML = infoArr[passIndex].passDesc
+  passPointDiv.innerHTML = infoArr[passIndex].passPoint
+  passFinishDiv.innerHTML = infoArr[passIndex].passFinish
+
+
 	var choicesContainer = document.getElementById('choices-container')
-  var imageArr = ['img/A.png', 'img/B.png', 'img/C.png', 'img/D.png']
-  var sectionArr = ['A','B','C','D']
+	var imageArr = ['img/A.png', 'img/B.png', 'img/C.png', 'img/D.png']
+	var sectionArr = ['A', 'B', 'C', 'D']
 	var choices = exercise.keys
 	var question = exercise.questions
 	var questiondetail = document.getElementsByClassName('questiondetail')[0]
@@ -71,39 +81,37 @@ function initChoicesView(exercise) {
 
 // 开始答题
 function beginAnswer() {
-	bindgetquestions((data) => {
-		totalExercises = data.questionandkey
-		var exercise = totalExercises[examIndex]
-		initChoicesView(exercise)
-	})
+		bindgetquestions((data) => {
+      infoArr = data.info
+			totalPassExercises = data.questionandkey
+			currentExercises = totalPassExercises[passIndex]
+			var exercise = currentExercises[examIndex]
+			initChoicesView(exercise)
+		})
+	
 }
 
 // 下一题
 function next() {
-  examIndex++
-
-	if (examIndex < totalExercises.length) {
-    if (choiceSelection) {
-      // 单选题
-      totalAnswer.push(choiceSelection.id)
-      choiceSelection = null;
-    }
-    if (choiceSelections.length > 0) {
-      totalAnswer.push(choiceSelections.join(','))
-      choiceSelections = []
-    }
+	examIndex++
+	// 重置
+	if (choiceSelection) {
+		// 单选题
+		totalAnswer.push(choiceSelection.id)
+		choiceSelection = null
+	}
+	if (choiceSelections.length > 0) {
+		totalAnswer.push(choiceSelections.join(','))
+		choiceSelections = []
+	}
+	if (examIndex < currentExercises.length) {
 		var choicesContainer = document.getElementById('choices-container')
 		choicesContainer.innerHTML = ''
-		var exercise = totalExercises[examIndex]
+		var exercise = currentExercises[examIndex]
 		initChoicesView(exercise)
 		refreshNextState()
 	} else {
-    var answerArr = []
-    totalAnswer.forEach(element=>{
-      element = element.replace(/choices/g,'')
-      answerArr.push(element)
-    })
-    console.log(answerArr)
+		$.fn.fullpage.moveSectionDown()
 	}
 }
 
@@ -130,11 +138,40 @@ function deleteItem(str) {
 	}
 }
 
+// 下一关
+function nextPass() {
+	passIndex++
+	if (passIndex >= totalPassExercises.length) {
+		// 全部通关
+		var answerArr = []
+		totalAnswer.forEach((element) => {
+			element = element.replace(/choices/g, '')
+			answerArr.push(element)
+		})
+		console.log(answerArr)
+		$.fn.fullpage.moveSectionDown()
+	} else {
+    // 下一关
+    examIndex = -1
+    currentExercises = totalPassExercises[passIndex]
+		next()
+		$.fn.fullpage.silentMoveTo(1, 0)
+	}
+}
+
+// 第几道题
 var examIndex = 0
+// 第几关
+var passIndex = 0
 var choiceSelection = null
 
 var choiceSelections = []
+// 当前关总共的题目
+var currentExercises = []
+
 // 总共的题目
-var totalExercises = []
+var totalPassExercises = []
 // 总共的答案
 var totalAnswer = []
+
+var infoArr = []

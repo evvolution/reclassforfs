@@ -17,14 +17,9 @@
   <div class="container-fluid">
     <div id="fullpage">
       <div class="fspsection section">
-        <h3>第一关</h3>
-        <h5>争做科学防疫小卫士</h5>
-        <p class="xxx">5题，每题5分，共25分</p>
-      </div>
-      <div class="fspsection section">
-        <div class="questionContent">
-            <p class="xxx">123123123123</p>
-        </div>
+        <h3 id="passTitle"></h3>
+        <h5 id="passDesc"></h5>
+        <p class="xxx" id="passPoint"></p>
       </div>
       <div class="fspsection section">
         <div class="questionContent">
@@ -47,7 +42,7 @@
           </div>
         </div>
       </div>
-      <div class="fspsection section">Some section4</div>
+      <div class="fspsection section" onclick="nextPass()" id="passFinish"></div>
     </div>
   </div>
 
