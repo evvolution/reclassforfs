@@ -3,11 +3,31 @@ body{
     background:linear-gradient(144deg,rgba(255,250,232,1) 0%,rgba(255,242,226,1) 100%);
 }
 
-
 .fspsection{
     padding: 0 24px;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
 }
+
+.noticeforinput{
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 100px;
+}
+
+.selectgroup{
+  margin-bottom: 16px;
+}
+
+.labelforfssheet{
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.selectforfs{
+  border-radius: 37.5px;
+  height: 40px;
+}
+
 
 .questionContent{
     /* height: 80%; */
@@ -64,4 +84,11 @@ body{
   width: 152px;
   height: 105px;
   src: url(../../img/next_select.png);
+}
+
+
+.bottompic{
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
 }
