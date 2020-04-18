@@ -9,7 +9,7 @@ body{
     border: 1px solid #000;
 }
 
-.questionContent{
+.questionContent {
     /* height: 80%; */
     /* position: absolute;
     top: 2rem; */
@@ -18,7 +18,10 @@ body{
 
 .questiondetail{
     font-size: 18px;
-    margin-bottom: 20px;
+    margin: 18px auto 20px auto;
+    color: #333;
+    font-weight: 500;
+    line-height: 28px;
 }
 
 .choices{
@@ -32,7 +35,7 @@ body{
 .choiceOrder{
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 30%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
@@ -46,6 +49,10 @@ body{
 }
 
 /* 答题 */
+#videoContainer {
+  width: 100%;
+  height: 200px;
+}
 .choice-selected {
   background-image: linear-gradient(#AEFF68, #69E149);
 }

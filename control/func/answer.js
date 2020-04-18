@@ -42,15 +42,14 @@ function multipleSelection(e) {
 
 // 初始化选项 问题
 function initChoicesView(exercise) {
-  var passTitleDiv = document.getElementById('passTitle')
-  var passDescDiv = document.getElementById('passDesc')
-  var passPointDiv = document.getElementById('passPoint')
-  var passFinishDiv = document.getElementById('passFinish')
-  passTitleDiv.innerHTML = infoArr[passIndex].passTitle
-  passDescDiv.innerHTML = infoArr[passIndex].passDesc
-  passPointDiv.innerHTML = infoArr[passIndex].passPoint
-  passFinishDiv.innerHTML = infoArr[passIndex].passFinish
-
+	var passTitleDiv = document.getElementById('passTitle')
+	var passDescDiv = document.getElementById('passDesc')
+	var passPointDiv = document.getElementById('passPoint')
+	var passFinishDiv = document.getElementById('passFinish')
+	passTitleDiv.innerHTML = infoArr[passIndex].passTitle
+	passDescDiv.innerHTML = infoArr[passIndex].passDesc
+	passPointDiv.innerHTML = infoArr[passIndex].passPoint
+	passFinishDiv.innerHTML = infoArr[passIndex].passFinish
 
 	var choicesContainer = document.getElementById('choices-container')
 	var imageArr = ['img/A.png', 'img/B.png', 'img/C.png', 'img/D.png']
@@ -81,14 +80,14 @@ function initChoicesView(exercise) {
 
 // 开始答题
 function beginAnswer() {
-		bindgetquestions((data) => {
-      infoArr = data.info
-			totalPassExercises = data.questionandkey
-			currentExercises = totalPassExercises[passIndex]
-			var exercise = currentExercises[examIndex]
-			initChoicesView(exercise)
-		})
-	
+	bindgetquestions((data) => {
+		infoArr = data.info
+		totalPassExercises = data.questionandkey
+		currentExercises = totalPassExercises[passIndex]
+		var exercise = currentExercises[examIndex]
+    initChoicesView(exercise)
+    initVideo(exercise)
+	})
 }
 
 // 下一题
@@ -109,6 +108,7 @@ function next() {
 		choicesContainer.innerHTML = ''
 		var exercise = currentExercises[examIndex]
 		initChoicesView(exercise)
+		initVideo(exercise)
 		refreshNextState()
 	} else {
 		$.fn.fullpage.moveSectionDown()
@@ -148,14 +148,30 @@ function nextPass() {
 			element = element.replace(/choices/g, '')
 			answerArr.push(element)
 		})
-		console.log(answerArr)
 		$.fn.fullpage.moveSectionDown()
 	} else {
     // 下一关
-    examIndex = -1
-    currentExercises = totalPassExercises[passIndex]
+		examIndex = -1
+		currentExercises = totalPassExercises[passIndex]
 		next()
 		$.fn.fullpage.silentMoveTo(1, 0)
+	}
+}
+
+function initVideo(exercise) {
+	var videoDiv = document.getElementById('videoContainer')
+	var videoObj = videojs('videoContainer')
+	if (exercise.video && exercise.video.length > 0) {
+    if (videoSrc != exercise.video) {
+      videoObj.src(exercise.video)
+      videoObj.load(exercise.video)
+      videoSrc = exercise.video
+    }
+		videoDiv.style.display = ''
+	} else {
+    videoSrc = ""
+		videoObj.pause()
+		videoDiv.style.display = 'none'
 	}
 }
 
@@ -173,5 +189,7 @@ var currentExercises = []
 var totalPassExercises = []
 // 总共的答案
 var totalAnswer = []
-
+// 信息
 var infoArr = []
+// 视频源
+var videoSrc = ""
