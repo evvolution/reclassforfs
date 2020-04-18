@@ -9,6 +9,8 @@ var pIndex = -1;
 var disEle = document.getElementById("userdistrict");
 var schEle = document.getElementById("userschool");
 
+var userschool = "";
+var username = "";
 
 $(document).ready(function() {
   
@@ -42,7 +44,7 @@ function bindsubmit(){
 		url: link + 'fcheck',
 		data: {'exam_id':'28','openid':'12313213232131231','answers':'{"1":"A,B,C","2":"B","3":"B","4":"A","5":"A,B,C","6":"A,B,C","7":"A,B,C","8":"A,B,C","9":"A,B,C","10":"A,B,C","11":"A,B,C","12":"B,C","13":"A,B","14":"A,B,C","15":"A,C","16":"B","17":"A,B,C,D","18":"A","19":"A","20":"A"}'},
 		success: function(data){
-            console.log(data);
+        console.log(data);
 		},
 		error: function(){
 
@@ -83,7 +85,10 @@ function bindgetschools(){
 }
 function chg(obj) {
     if (obj.value == -1) {
+        var defaultx = '<option value="-1">-请选择学校-</option>';
         schEle.options.length = 0;
+        $("#userschool").html(defaultx)
+        return;
     }
     //获取值
     var val = obj.value;
@@ -94,4 +99,16 @@ function chg(obj) {
         var op = new Option(cs[i], i);
         schEle.options.add(op);
     }
+}
+
+
+function start(){
+  userschool = $('#userschool option:selected').text();
+  username = $('#username').val();
+  if((userschool === "-请选择学校-") || (username === "")){
+    alert("请填写个人信息");
+    return;
+  }else{
+    $.fn.fullpage.moveSectionDown();
+  }
 }
