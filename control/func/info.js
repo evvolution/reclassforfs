@@ -5,7 +5,9 @@
 var link = "http://server.foshanplus.com/";
 
 $(document).ready(function() {
+  
     initfullpage();
+    test()
     // bindgetquestions()
     // bindsubmit()
 });
@@ -14,10 +16,17 @@ function initfullpage(){
   $('#fullpage').fullpage({
     afterLoad: function () {
       $.fn.fullpage.setAllowScrolling(false, 'up');
+      $.fn.fullpage.setAllowScrolling(false, 'down');
     }
   });
 }
 
+
+function test(){
+  $(".xxx").click(function(){
+    $.fn.fullpage.moveSectionDown();
+  });
+}
 
 function bindsubmit(){
     $.ajax({
