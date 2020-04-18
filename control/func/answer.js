@@ -42,14 +42,8 @@ function multipleSelection(e) {
 
 // 初始化选项 问题
 function initChoicesView(exercise) {
-	var passTitleDiv = document.getElementById('passTitle')
-	var passDescDiv = document.getElementById('passDesc')
-	var passPointDiv = document.getElementById('passPoint')
-	// var passFinishDiv = document.getElementById('passFinish')
-	passTitleDiv.innerHTML = infoArr[passIndex].passTitle
-	passDescDiv.innerHTML = infoArr[passIndex].passDesc
-	passPointDiv.innerHTML = infoArr[passIndex].passPoint
-	// passFinishDiv.innerHTML = infoArr[passIndex].passFinish
+	initBeginView(passIndex)
+	initPassView(passIndex)
 
 	var choicesContainer = document.getElementById('choices-container')
 	var imageArr = ['img/A.png', 'img/B.png', 'img/C.png', 'img/D.png']
@@ -85,8 +79,8 @@ function beginAnswer() {
 		totalPassExercises = data.questionandkey
 		currentExercises = totalPassExercises[passIndex]
 		var exercise = currentExercises[examIndex]
-    initChoicesView(exercise)
-    initVideo(exercise)
+		initChoicesView(exercise)
+		initVideo(exercise)
 	})
 }
 
@@ -104,7 +98,7 @@ function next() {
 		choiceSelections = []
 	}
 	if (examIndex < currentExercises.length) {
-    var choicesContainer = document.getElementById('choices-container')
+		var choicesContainer = document.getElementById('choices-container')
 		choicesContainer.innerHTML = ''
 		var exercise = currentExercises[examIndex]
 		initChoicesView(exercise)
@@ -116,7 +110,7 @@ function next() {
 }
 
 // 提示还未作答
-function tipsNext() {}
+function tipsNext() { }
 
 function refreshNextState() {
 	var nextBtn = document.getElementById('nextBtn')
@@ -150,7 +144,7 @@ function nextPass() {
 		})
 		$.fn.fullpage.moveSectionDown()
 	} else {
-    // 下一关
+		// 下一关
 		examIndex = -1
 		currentExercises = totalPassExercises[passIndex]
 		next()
@@ -162,25 +156,25 @@ function initVideo(exercise) {
 	var videoDiv = document.getElementById('videoContainer')
 	var videoObj = videojs('videoContainer')
 	if (exercise.video && exercise.video.length > 0) {
-    if (videoSrc != exercise.video) {
-      videoObj.src(exercise.video)
-      videoObj.load(exercise.video)
-      videoSrc = exercise.video
-    }
+		if (videoSrc != exercise.video) {
+			videoObj.src(exercise.video)
+			videoObj.load(exercise.video)
+			videoSrc = exercise.video
+		}
 		videoDiv.style.display = ''
 	} else {
-    videoSrc = ""
+		videoSrc = ""
 		videoObj.pause()
 		videoDiv.style.display = 'none'
 	}
 }
 
 
-
 // 第几道题
 var examIndex = 0
-// 第几关
+
 var passIndex = 0
+
 var choiceSelection = null
 
 var choiceSelections = []
@@ -195,3 +189,7 @@ var totalAnswer = []
 var infoArr = []
 // 视频源
 var videoSrc = ""
+
+
+
+
