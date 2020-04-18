@@ -154,7 +154,7 @@ function nextPass() {
 		examIndex = -1
 		currentExercises = totalPassExercises[passIndex]
 		next()
-		$.fn.fullpage.silentMoveTo(1, 0)
+		$.fn.fullpage.silentMoveTo(2, 0)
 	}
 }
 

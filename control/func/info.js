@@ -3,12 +3,19 @@
 */
 
 var link = "http://server.foshanplus.com/";
+var dis = [];
+var sch = [];
+var pIndex = -1;
+var disEle = document.getElementById("userdistrict");
+var schEle = document.getElementById("userschool");
+
 
 $(document).ready(function() {
   
     initfullpage();
     test()
     // bindgetquestions()
+    bindgetschools();
     // bindsubmit()
 });
 
@@ -54,4 +61,37 @@ function bindgetquestions(callBack){
           
         }
     });
+}
+
+function bindgetschools(){
+  $.ajax({
+      url: '../info/schools4.17.json',
+      async: false,
+      success: function (data) {
+
+        dis = data.schools[0].district;
+        sch = data.schools[0].managed;
+
+        for (var i = 0; i < dis.length; i++) {
+          //声明option.<option value="pres[i]">Pres[i]</option>
+          var op = new Option(dis[i], i);
+          //添加
+          disEle.options.add(op);
+        }
+      }
+  });
+}
+function chg(obj) {
+    if (obj.value == -1) {
+        schEle.options.length = 0;
+    }
+    //获取值
+    var val = obj.value;
+    pIndex = obj.value;
+    var cs = sch[val];
+    schEle.options.length = 0;
+    for (var i = 0; i < cs.length; i++) {
+        var op = new Option(cs[i], i);
+        schEle.options.add(op);
+    }
 }
