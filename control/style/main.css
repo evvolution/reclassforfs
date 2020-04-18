@@ -81,18 +81,66 @@ body{
   display: none;
 }
 
-#dis-nextBtn,#nextBtn {
+#dis-nextBtn,#nextBtn,.nextPassBtn {
   margin-top: 24px;
   float: right;
   overflow: hidden;
 }
 
-#nextBtn img,#dis-nextBtn img {
+#nextBtn img,#dis-nextBtn img,.nextPassBtn img{
   width: 152px;
   height: 105px;
   src: url(../../img/next_select.png);
 }
 
+/* 勋章 */
+.top-medalContainer {
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+.top-medalContainer .bg {
+  width: 100%;
+}
+
+.top-medalContainer .title {
+  position: absolute;
+  top: 55px;
+  line-height: 18px;
+  font-weight: 500;
+  text-align: center;
+  width: 100%;
+  font-size: 18px;
+}
+.top-medalContainer .icon {
+  width: 100px;
+  height: 126px;
+  position: absolute;
+  left: calc(50% - 50px);
+  top: calc(50% - 63px);
+}
+.bottom-medalContainer {
+  position: relative;
+  width: 100%;
+}
+.bottom-medalContainer .item {
+  width: 33.3%;
+  float: left;
+  box-sizing: border-box;
+}
+.bottom-medalContainer .item img {
+  display: block;
+  width: 100px;
+  height: 104px;
+  margin: 0 auto;
+}
+.bottom-medalContainer .item p {
+  font-size: 14px;
+  line-height: 20px;
+  width: 100%;
+  color: #333;
+  text-align: center;
+}
 
 .bottompic{
   position: absolute;

@@ -45,11 +45,11 @@ function initChoicesView(exercise) {
 	var passTitleDiv = document.getElementById('passTitle')
 	var passDescDiv = document.getElementById('passDesc')
 	var passPointDiv = document.getElementById('passPoint')
-	var passFinishDiv = document.getElementById('passFinish')
+	// var passFinishDiv = document.getElementById('passFinish')
 	passTitleDiv.innerHTML = infoArr[passIndex].passTitle
 	passDescDiv.innerHTML = infoArr[passIndex].passDesc
 	passPointDiv.innerHTML = infoArr[passIndex].passPoint
-	passFinishDiv.innerHTML = infoArr[passIndex].passFinish
+	// passFinishDiv.innerHTML = infoArr[passIndex].passFinish
 
 	var choicesContainer = document.getElementById('choices-container')
 	var imageArr = ['img/A.png', 'img/B.png', 'img/C.png', 'img/D.png']
@@ -104,7 +104,7 @@ function next() {
 		choiceSelections = []
 	}
 	if (examIndex < currentExercises.length) {
-		var choicesContainer = document.getElementById('choices-container')
+    var choicesContainer = document.getElementById('choices-container')
 		choicesContainer.innerHTML = ''
 		var exercise = currentExercises[examIndex]
 		initChoicesView(exercise)
@@ -174,6 +174,8 @@ function initVideo(exercise) {
 		videoDiv.style.display = 'none'
 	}
 }
+
+
 
 // 第几道题
 var examIndex = 0
