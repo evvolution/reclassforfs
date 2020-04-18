@@ -36,15 +36,32 @@ body{
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
+.choiceOrder img {
+  width: 40px;
+  height: 40px;
+}
 
 .choicedetailcontent{
     padding: 13px 0;
 }
 
-.selected {
-  background: yellow;
+/* 答题 */
+.choice-selected {
+  background-image: linear-gradient(#AEFF68, #69E149);
 }
 
 .nodisplay {
   display: none;
+}
+
+#dis-nextBtn,#nextBtn {
+  margin-top: 24px;
+  float: right;
+  overflow: hidden;
+}
+
+#nextBtn img,#dis-nextBtn img {
+  width: 152px;
+  height: 105px;
+  src: url(../../img/next_select.png);
 }

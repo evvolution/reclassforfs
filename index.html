@@ -28,7 +28,7 @@
       </div>
       <div class="fspsection section">
         <div class="questionContent">
-          <div class="questiondetail">2. 使用过的口罩该怎么处理？</div>
+          <div class="questiondetail"></div>
           <div class="choices row nodisplay" id="demo-choice">
             <div class="col-3">
               <div class="choiceOrder"><img src="**图片**"></div>
@@ -39,8 +39,12 @@
           </div>
           <div id="choices-container">
           </div>
-
-          <div onclick="next()">下一题</div>
+          <div id="dis-nextBtn" onclick="tipsNext()">
+            <img src="./img/next_select.png" alt="">
+          </div>
+          <div id="nextBtn" onclick="next()" style="display: none;">
+            <img src="./img/next_selected.png" alt="">
+          </div>
         </div>
       </div>
       <div class="fspsection section">Some section4</div>
@@ -57,32 +61,7 @@
 
 </body>
 <script type="text/javascript">
-
-  var choices = ["随意丢弃在垃圾桶", "对于普通人日常使用过的口罩，按照生活垃圾分类的要求，可以直接丢入“其它垃圾”桶，严禁回收及分拣", "继续反复使用"]
-  var choicesContainer = document.getElementById('choices-container')
-  var imageArr = ["img/A.png","img/B.png","img/C.png","img/D.png"]
-  choices.forEach((element, index) => {
-    var div = document.createElement("div");
-    var e = document.getElementById("demo-choice");
-    console.log(typeof e)
-    console.log('e.classList')
-    e.classList.remove('display-none')
-    
-    var innerHTML = e.innerHTML;
-    console.log('element' + element)
-    innerHTML = innerHTML.replace("**答案**",element);
-    div.innerHTML = innerHTML.replace("**图片**",imageArr[index]);
-
-    div.id = "choices" + index;
-    div.className = "choices row";
-    choicesContainer.appendChild(div);
-  });
-
-  initQuestion(false)
-
-  function next() {
-
-  }
+  beginAnswer()
 </script>
 
 </html>
