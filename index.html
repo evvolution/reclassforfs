@@ -11,7 +11,7 @@
   <link rel="stylesheet" type="text/css" href="plugins/bootstrap/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="plugins/fullpage/fullpage.min.css">
   <link rel="stylesheet" type="text/css" href="control/style/main.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.3.0/video-js.min.css" rel="stylesheet">
+  <link href="plugins/video/video-js.css" rel="stylesheet">
 </head>
 
 <body>
@@ -20,23 +20,23 @@
       <div class="fspsection section">
         <div class="noticeforinput">请填写你的信息</div>
         <div class="selectgroup form-group">
-            <label for="userdistrict" class="labelforfssheet">辖区</label>
-            <select class="selectforfs form-control" id="userdistrict" onchange="chg(this);">
-                <option value="-1">-请选择辖区-</option>
-            </select>
+          <label for="userdistrict" class="labelforfssheet">辖区</label>
+          <select class="selectforfs form-control" id="userdistrict" onchange="chg(this);">
+            <option value="-1">-请选择辖区-</option>
+          </select>
         </div>
         <div class="selectgroup form-group">
-            <label for="userschool" class="labelforfssheet">学校</label>
-            <select class="selectforfs form-control" id="userschool">
-                <option value="-1">-请选择学校-</option>
-            </select>
+          <label for="userschool" class="labelforfssheet">学校</label>
+          <select class="selectforfs form-control" id="userschool">
+            <option value="-1">-请选择学校-</option>
+          </select>
         </div>
         <div class="selectgroup form-group">
-            <label for="username" class="labelforfssheet">姓名</label>
-            <input type="text" class="selectforfs form-control" id="username">
+          <label for="username" class="labelforfssheet">姓名</label>
+          <input type="text" class="selectforfs form-control" id="username">
         </div>
         <div id="infosetBtn" class="selectgroup startbtn" onclick="start()">
-            <img src="./img/start.png" alt="">
+          <img src="./img/start.png" alt="">
         </div>
       </div>
       <div class="fspsection section xxx" id="passBegin">
@@ -44,20 +44,20 @@
         <img class="descImg" src="" alt="">
         <p class="second">5秒后开始答题，可点击任意位置跳过</p>
       </div>
-      <div class="fspsection section">
+      <div class="fspsection section questionSection">
         <div class="questionContent">
-          <video id="videoContainer" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto"
-          data-setup='{"example_option":true}'>
-          <source id="videoSource" src="" type="video/mp4"/>
+          <video id="videoContainer" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="none"
+            data-setup='{"example_option":true}'  webkit-playsinline="true" playsinline="true">
+            <source id="videoSource" src="https://fsnewsres.foshanplus.com/news/843ac68e424d49f983a472ef6a6be344.mp4" type="video/mp4" />
           </video>
           <div class="questiondetail"></div>
           <div class="choices row nodisplay" id="demo-choice">
-            <div class="col-3">
+            <!-- <div class="icon"> -->
               <div class="choiceOrder"><img src="**图片**"></div>
-            </div>
-            <div class="choicedetailcontent col-9">
+            <!-- </div> -->
+            <!-- <div class="choicedetailcontent"> -->
               <div class="choicedetail">**答案**</div>
-            </div>
+            <!-- </div> -->
           </div>
           <div id="choices-container">
           </div>
@@ -97,7 +97,7 @@
   </div>
   <div class="bottompic"><img src="img/bottom.png"></div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.3.0/video.min.js"></script>
+  <script src="./plugins/video/video.min.js"></script>
   <script type="text/javascript" src="plugins/jquery/jquery.min.js"></script>
   <!-- <script type="text/javascript" src="plugins/bootstrap/bootstrap.min.js"></script> -->
   <!-- <script type="text/javascript" src="plugins/bootstrap/popper.min.js"></script> -->
