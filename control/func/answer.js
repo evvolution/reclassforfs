@@ -67,7 +67,7 @@ function initChoicesView(exercise) {
 		div.className = 'choices row'
 		choicesContainer.appendChild(div)
 	})
-
+	actionIn("#choices-container", 'action_scale', 0.4, "linear")
 	// 初始化题目
 	initQuestion(exercise.type)
 }
@@ -86,6 +86,7 @@ function beginAnswer() {
 
 // 下一题
 function next() {
+
 	examIndex++
 	// 重置
 	if (choiceSelection) {
@@ -98,19 +99,23 @@ function next() {
 		choiceSelections = []
 	}
 	if (examIndex < currentExercises.length) {
-		var choicesContainer = document.getElementById('choices-container')
-		choicesContainer.innerHTML = ''
-		var exercise = currentExercises[examIndex]
-		initChoicesView(exercise)
-		initVideo(exercise)
-		refreshNextState()
+		actionOut("#choices-container", 'action_scaleOut', 0.4, "linear", () => {
+			var choicesContainer = document.getElementById('choices-container')
+			choicesContainer.innerHTML = ''
+			var exercise = currentExercises[examIndex]
+			initChoicesView(exercise)
+			initVideo(exercise)
+			refreshNextState()
+		});
 	} else {
 		$.fn.fullpage.moveSectionDown()
 	}
+
+
 }
 
 // 提示还未作答
-function tipsNext() { }
+function tipsNext() {}
 
 function refreshNextState() {
 	var nextBtn = document.getElementById('nextBtn')
@@ -191,5 +196,27 @@ var infoArr = []
 var videoSrc = ""
 
 
+/*obj,actionName,speed都是 string,time(秒)是int类型*/
+function actionIn(obj, actionName, time, speed) {
+	$(obj).show();
+	$(obj).css({
+		"animation": actionName + " " + time + "s" + " " + speed,
+		"animation-fill-mode": "forwards",
+		"-webkit-animation": actionName + " " + time + "s" + " " + speed,
+		"-webkit-animation-fill-mode": "forwards",
+	});
+}
 
 
+/*obj,actionName,speed都是 string,time(秒)是int类型*/
+function actionOut(obj, actionName, time, speed, callBack) {
+	$(obj).css({
+		"animation": actionName + " " + time + "s" + " " + speed,
+		"-webkit-animation": actionName + " " + time + "s" + " " + speed
+	});
+	var setInt_obj = setInterval(function () {
+		$(obj).hide();
+		clearInterval(setInt_obj);
+		callBack();
+	}, time * 1000);
+}

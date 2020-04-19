@@ -86,9 +86,9 @@ body{
   color: #333;
 }
 
-.questionSection .fp-tableCell,.clockSection .fp-tableCell,.pointSection .fp-tableCell {
+/* .questionSection .fp-tableCell,.clockSection .fp-tableCell,.pointSection .fp-tableCell {
   vertical-align: top!important;
-}
+} */
 
 /* 开始答题 */
 #passBegin {
@@ -122,8 +122,9 @@ body{
 
 /* 答题 */
 #videoContainer {
-  width: 100%;
-  height: 200px;
+  width: 100vw;
+  height: 56.27vw;
+  margin-left: -24px;
 }
 .choice-selected {
   background-image: linear-gradient(#AEFF68, #69E149);
