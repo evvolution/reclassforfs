@@ -43,7 +43,7 @@ function multipleSelection(e) {
 // 初始化选项 问题
 function initChoicesView(exercise) {
 	initBeginView(passIndex)
-	initPassView(passIndex)
+	initPassView(passIndex, answerResult)
 
 	var choicesContainer = document.getElementById('choices-container')
 	var imageArr = ['img/A.png', 'img/B.png', 'img/C.png', 'img/D.png']
@@ -67,7 +67,7 @@ function initChoicesView(exercise) {
 		div.className = 'choices row'
 		choicesContainer.appendChild(div)
 	})
-	actionIn("#choices-container", 'action_scale', 0.4, "linear")
+	actionIn('#choices-container', 'action_scale', 0.4, 'linear')
 	// 初始化题目
 	initQuestion(exercise.type)
 }
@@ -86,7 +86,6 @@ function beginAnswer() {
 
 // 下一题
 function next() {
-
 	examIndex++
 	// 重置
 	if (choiceSelection) {
@@ -99,19 +98,35 @@ function next() {
 		choiceSelections = []
 	}
 	if (examIndex < currentExercises.length) {
-		actionOut("#choices-container", 'action_scaleOut', 0.4, "linear", () => {
-			var choicesContainer = document.getElementById('choices-container')
-			choicesContainer.innerHTML = ''
-			var exercise = currentExercises[examIndex]
-			initChoicesView(exercise)
-			initVideo(exercise)
-			refreshNextState()
-		});
+		actionOut(
+			'#choices-container',
+			'action_scaleOut',
+			0.4,
+			'linear',
+			() => {
+				var choicesContainer = document.getElementById(
+					'choices-container'
+				)
+				choicesContainer.innerHTML = ''
+				var exercise = currentExercises[examIndex]
+				initChoicesView(exercise)
+				initVideo(exercise)
+				refreshNextState()
+			}
+		)
 	} else {
-		$.fn.fullpage.moveSectionDown()
+		// 最后一关
+		if (passIndex === 2) {
+			// 提交数据
+			bindsubmit(totalAnswer, (data) => {
+				initBeginView(passIndex + 1)
+				$.fn.fullpage.moveSectionDown()
+			})
+		} else {
+			initBeginView(passIndex + 1)
+			$.fn.fullpage.moveSectionDown()
+		}
 	}
-
-
 }
 
 // 提示还未作答
@@ -142,11 +157,6 @@ function nextPass() {
 	passIndex++
 	if (passIndex >= totalPassExercises.length) {
 		// 全部通关
-		var answerArr = []
-		totalAnswer.forEach((element) => {
-			element = element.replace(/choices/g, '')
-			answerArr.push(element)
-		})
 		$.fn.fullpage.moveSectionDown()
 	} else {
 		// 下一关
@@ -163,17 +173,29 @@ function initVideo(exercise) {
 	if (exercise.video && exercise.video.length > 0) {
 		if (videoSrc != exercise.video) {
 			videoObj.src(exercise.video)
+			videoObj.poster(exercise.poster)
 			videoObj.load(exercise.video)
 			videoSrc = exercise.video
 		}
 		videoDiv.style.display = ''
 	} else {
-		videoSrc = ""
+		videoSrc = ''
 		videoObj.pause()
 		videoDiv.style.display = 'none'
 	}
 }
 
+// 查看我的成绩
+function checkScore() {
+	$.fn.fullpage.moveSectionDown()
+	initScoreView(answerResult)
+}
+
+// 打卡按钮
+function createPoster() {
+  $.fn.fullpage.moveSectionDown()
+  initClockView('测试', '在本次网上“开学第一课”中，你表现突出，成绩优异，获得满分，特授予你“防疫小先锋”称号，以资鼓励。', '吉利中学')
+}
 
 // 第几道题
 var examIndex = 0
@@ -193,30 +215,31 @@ var totalAnswer = []
 // 信息
 var infoArr = []
 // 视频源
-var videoSrc = ""
+var videoSrc = ''
 
+// 答题结果
+var answerResult = {}
 
 /*obj,actionName,speed都是 string,time(秒)是int类型*/
 function actionIn(obj, actionName, time, speed) {
-	$(obj).show();
+	$(obj).show()
 	$(obj).css({
-		"animation": actionName + " " + time + "s" + " " + speed,
-		"animation-fill-mode": "forwards",
-		"-webkit-animation": actionName + " " + time + "s" + " " + speed,
-		"-webkit-animation-fill-mode": "forwards",
-	});
+		animation: actionName + ' ' + time + 's' + ' ' + speed,
+		'animation-fill-mode': 'forwards',
+		'-webkit-animation': actionName + ' ' + time + 's' + ' ' + speed,
+		'-webkit-animation-fill-mode': 'forwards',
+	})
 }
-
 
 /*obj,actionName,speed都是 string,time(秒)是int类型*/
 function actionOut(obj, actionName, time, speed, callBack) {
 	$(obj).css({
-		"animation": actionName + " " + time + "s" + " " + speed,
-		"-webkit-animation": actionName + " " + time + "s" + " " + speed
-	});
+		animation: actionName + ' ' + time + 's' + ' ' + speed,
+		'-webkit-animation': actionName + ' ' + time + 's' + ' ' + speed,
+	})
 	var setInt_obj = setInterval(function () {
-		$(obj).hide();
-		clearInterval(setInt_obj);
-		callBack();
-	}, time * 1000);
+		$(obj).hide()
+		clearInterval(setInt_obj)
+		callBack()
+	}, time * 1000)
 }

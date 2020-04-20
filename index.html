@@ -48,7 +48,7 @@
       <div class="fspsection section questionSection">
         <div class="questionContent">
           <video id="videoContainer" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="none"
-            data-setup='{"example_option":true}' webkit-playsinline="true" playsinline="true" style="outline: none;">
+            data-setup='{"example_option":true}' webkit-playsinline="true" playsinline="true" style="outline: none;" poster="./img/videoPoster_1.jpg">
             <source id="videoSource" src="https://fsnewsres.foshanplus.com/news/843ac68e424d49f983a472ef6a6be344.mp4"
               type="video/mp4" />
           </video>
@@ -71,7 +71,7 @@
           </div>
         </div>
       </div>
-      <div class="fspsection section" onclick="nextPass()" id="passFinish">
+      <div class="fspsection section" id="passFinish">
         <div class="top-medalContainer">
           <p class="title"></p>
           <img class="bg" src="./img/halo.png" alt="">
@@ -91,8 +91,14 @@
             <p>心理防疫勋章</p>
           </div>
         </div>
-        <div class="nextPassBtn">
+        <div class="nextPassBtn" onclick="nextPass()">
           <img src="./img/next-pass.png" alt="">
+        </div>
+        <div class="checkScoreBtn" style="display: none;" onclick="checkScore()">
+          <img src="./img/checkScore.png" alt="">
+        </div>
+        <div class="createPosterBtn" style="display: none;" onclick="createPoster()">
+          <img src="./img/createPoster.png" alt="">
         </div>
       </div>
       <!-- 分数页 -->

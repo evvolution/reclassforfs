@@ -86,9 +86,9 @@ body{
   color: #333;
 }
 
-/* .questionSection .fp-tableCell,.clockSection .fp-tableCell,.pointSection .fp-tableCell {
+.questionSection .fp-tableCell,.clockSection .fp-tableCell,.pointSection .fp-tableCell {
   vertical-align: top!important;
-} */
+}
 
 /* 开始答题 */
 #passBegin {
@@ -125,6 +125,9 @@ body{
   width: 100vw;
   height: 56.27vw;
   margin-left: -24px;
+}
+button:focus {
+  outline: none;
 }
 .choice-selected {
   background-image: linear-gradient(#AEFF68, #69E149);
@@ -261,6 +264,22 @@ body{
   height: auto;
   margin-top: 15px;
 }
+
+.checkScoreBtn,.createPosterBtn {
+  width: 100%;
+  display: block;
+  margin-top: 10px;
+}
+
+.checkScoreBtn img,.createPosterBtn img {
+  width: 100%;
+  height: auto;
+}
+
+
+
+
+
 
 /* 打卡页 */
 .clockSection .container {
