@@ -74,23 +74,33 @@ function bindgetquestions(callBack){
 }
 
 function bindgetschools(){
-  $.ajax({
-      url: '../info/schools4.17.json',
-      async: false,
-      success: function (data) {
+  // $.ajax({
+  //     url: '../info/schools4.17.json',
+  //     async: false,
+  //     success: function (data) {
 
-        dis = data.schools[0].district;
-        sch = data.schools[0].managed;
+  //       dis = data.schools[0].district;
+  //       sch = data.schools[0].managed;
 
-        for (var i = 0; i < dis.length; i++) {
-          //声明option.<option value="pres[i]">Pres[i]</option>
-          var op = new Option(dis[i], i);
-          //添加
-          disEle.options.add(op);
-        }
-      }
-  });
+  //       for (var i = 0; i < dis.length; i++) {
+  //         //声明option.<option value="pres[i]">Pres[i]</option>
+  //         var op = new Option(dis[i], i);
+  //         //添加
+  //         disEle.options.add(op);
+  //       }
+  //     }
+  // });
+  fsschools = data.schools[0].district;
+  fsschools = data.schools[0].managed;
+
+  for (var i = 0; i < dis.length; i++) {
+    //声明option.<option value="pres[i]">Pres[i]</option>
+    var op = new Option(dis[i], i);
+    //添加
+    disEle.options.add(op);
+  }
 }
+
 function chg(obj) {
     if (obj.value == -1) {
         var defaultx = '<option value="-1">-请选择学校-</option>';
