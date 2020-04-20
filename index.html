@@ -18,17 +18,18 @@
 <body>
   <div class="container-fluid">
     <div id="fullpage">
+      
       <div class="fspsection section">
         <div class="noticeforinput">请填写你的信息</div>
         <div class="selectgroup form-group">
           <label for="userdistrict" class="labelforfssheet">辖区</label>
-          <select class="selectforfs form-control" id="userdistrict" onchange="chg(this);">
+          <select class="selectforfs form-control" id="userdistrict" onchange="chg(this);" style="border-radius: 20px;">
             <option value="-1">-请选择辖区-</option>
           </select>
         </div>
         <div class="selectgroup form-group">
           <label for="userschool" class="labelforfssheet">学校</label>
-          <select class="selectforfs form-control" id="userschool">
+          <select class="selectforfs form-control" id="userschool" style="border-radius: 20px;">
             <option value="-1">-请选择学校-</option>
           </select>
         </div>
@@ -118,11 +119,13 @@
       </div>
       <!-- 打卡页 -->
       <div class="fspsection section clockSection">
-        <div class="container">
-          <img class="clockTitle" src="./img/clockTitle.png" alt="">
-          <p></p>
-          <p></p>
-          <p></p>
+        <div class="clock-container">
+          <div class="text-container">
+            <img class="clockTitle" src="./img/clockTitle.png" alt="">
+            <p></p>
+            <p></p>
+            <p></p>
+          </div>
           <img class="clockBg" src="./img/clockBg.png" alt="">
         </div>
         <div class="clockBtn">

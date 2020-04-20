@@ -85,7 +85,7 @@ function initScoreView(answerResult) {
 
 // 设置打卡页面数据
 function initClockView(name, content, school) {
-	var contentDoms = Array.from($('.clockSection .container p'))
+	var contentDoms = Array.from($('.clockSection .clock-container p'))
 	console.log(contentDoms)
 	contentDoms.forEach((element, index) => {
 		if (index === 0) {

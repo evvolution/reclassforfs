@@ -282,20 +282,29 @@ button:focus {
 
 
 /* 打卡页 */
-.clockSection .container {
+.clockSection .clock-container {
   width: 100%;
   margin-top: 23px;
   position: relative;
+  /* padding-top: 28px;
+  padding: 28px 24px 0 24px; */
+}
+
+.clockSection .clock-container .text-container {
+  position: absolute;
+  left: 0px;
+  top: 0px;
   padding-top: 28px;
   padding: 28px 24px 0 24px;
 }
 .clockSection .clockBg {
   width: 100%;
   height: auto;
-  position: absolute;
+  display: block;
+  /* position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: -1; */
 }
 .clockSection .clockTitle {
   width: auto;
@@ -315,9 +324,9 @@ button:focus {
 
 .clockSection .clockBtn {
   width: calc(100% - 24px*2);
-  position: absolute;
-  bottom: 30px;
-  left: 24px;
+  position: relative;
+  margin: 20px auto 0 auto;
+  /* margin-top: 20px; */
 }
 .clockSection .clockBtn img {
   width: 100%;
