@@ -26,7 +26,8 @@ var fsquestions = {
 			{
 				"questions": "如何正确佩戴口罩?(多选)",
 				"type": 1,
-				"video": "https://fsnewsres.foshanplus.com/news/843ac68e424d49f983a472ef6a6be344.mp4",
+        "video": "https://fsnewsres.foshanplus.com/news/843ac68e424d49f983a472ef6a6be344.mp4",
+        "poster":"./img/videoPoster_1.jpg",
 				"keys": [
 					"佩戴时应根据脸型将折面充分展开，把鼻、嘴、下颌完全包住，然后压紧鼻夹",
 					"一次性口罩有里外之分，浅色面有吸湿功能，应该贴着嘴鼻，使深色面朝外",
@@ -36,7 +37,8 @@ var fsquestions = {
 			{
 				"questions": "使用过的口罩该怎么处理?(单选)",
 				"type": 0,
-				"video": "https://fsnewsres.foshanplus.com/news/843ac68e424d49f983a472ef6a6be344.mp4",
+        "video": "https://fsnewsres.foshanplus.com/news/843ac68e424d49f983a472ef6a6be344.mp4",
+        "poster":"./img/videoPoster_1.jpg",
 				"keys": [
 					"随意丢弃在垃圾桶",
 					"对于普通人日常使用过的口罩，按照生活垃圾分类的要求，可以直接丢入“其它垃圾”桶，严禁回收及分拣",
@@ -46,19 +48,22 @@ var fsquestions = {
 			{
 				"questions": "双手洗干净后，能否用手接触水龙头?(单选)",
 				"type": 0,
-				"video": "https://fsnewsres.foshanplus.com/news/8b06672f337c463fae6959e9919fbc92.mp4",
+        "video": "https://fsnewsres.foshanplus.com/news/8b06672f337c463fae6959e9919fbc92.mp4",
+        "poster":"./img/videoPoster_2.jpg",
 				"keys": ["能", "尽量不"]
 			},
 			{
 				"questions": "在洗擦手的过程中，至少要洗几秒?(单选)",
 				"type": 0,
-				"video": "https://fsnewsres.foshanplus.com/news/8b06672f337c463fae6959e9919fbc92.mp4",
+        "video": "https://fsnewsres.foshanplus.com/news/8b06672f337c463fae6959e9919fbc92.mp4",
+        "poster":"./img/videoPoster_2.jpg",
 				"keys": ["10秒", "5秒"]
 			},
 			{
 				"questions": "以下关于“七步洗手法”描述正确的是?(多选)",
 				"type": 1,
-				"video": "https://fsnewsres.foshanplus.com/news/8b06672f337c463fae6959e9919fbc92.mp4",
+        "video": "https://fsnewsres.foshanplus.com/news/8b06672f337c463fae6959e9919fbc92.mp4",
+        "poster":"./img/videoPoster_2.jpg",
 				"keys": [
 					"洗手掌：流水湿润双手，涂抹洗手液(或肥皂)，掌心相对，手指并拢相互揉搓",
 					"洗掌侧指缝：掌心相对，双手交叉沿指缝相互揉搓",
@@ -163,12 +168,14 @@ var fsquestions = {
 				"questions": "赵静波教授在视频中与同学们进行了一个心理小实验，出现的动物是?(单选)",
         "type": 0,
         "video": "https://fsnewsres.foshanplus.com/news/e5e8a0e38c094e9c91e55178f81446ca.mp4",
+        "poster":"./img/videoPoster_3.jpg",
 				"keys": ["马", "兔子", "猴子"]
 			},
 			{
 				"questions": "赵静波教授在视频中分享的备考锦囊有哪些?(多选)",
         "type": 1,
         "video": "https://fsnewsres.foshanplus.com/news/e5e8a0e38c094e9c91e55178f81446ca.mp4",
+        "poster":"./img/videoPoster_3.jpg",
 				"keys": [
 					"积极自我暗示",
 					"接纳情绪",
@@ -180,6 +187,7 @@ var fsquestions = {
 				"questions": "进行呼吸放松时第一步应该是?(单选)",
         "type": 0,
         "video": "https://fsnewsres.foshanplus.com/news/e5e8a0e38c094e9c91e55178f81446ca.mp4",
+        "poster":"./img/videoPoster_3.jpg",
 				"keys": [
 					"双手放在腹部",
 					"通过鼻子吸气，腹部鼓起来",
@@ -190,12 +198,14 @@ var fsquestions = {
 				"questions": "情绪管理的步骤包括觉察情绪、命名情绪、接纳情绪、表达情绪和？(单选)",
         "type": 0,
         "video": "https://fsnewsres.foshanplus.com/news/e5e8a0e38c094e9c91e55178f81446ca.mp4",
+        "poster":"./img/videoPoster_3.jpg",
 				"keys": ["对", "错"]
 			},
 			{
 				"questions": "佛山市24小时心理援助热线是0757-82667888?(单选)",
         "type": 0,
         "video": "https://fsnewsres.foshanplus.com/news/e5e8a0e38c094e9c91e55178f81446ca.mp4",
+        "poster":"./img/videoPoster_3.jpg",
 				"keys": ["对", "错"]
 			}
 		]

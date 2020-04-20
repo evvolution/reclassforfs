@@ -48,7 +48,8 @@
       <div class="fspsection section questionSection">
         <div class="questionContent">
           <video id="videoContainer" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="none"
-            data-setup='{"example_option":true}' webkit-playsinline="true" playsinline="true" style="outline: none;" poster="./img/videoPoster_1.jpg">
+            data-setup='{"example_option":true}' webkit-playsinline="true" playsinline="true" style="outline: none;"
+            poster="./img/videoPoster_1.jpg">
             <source id="videoSource" src="https://fsnewsres.foshanplus.com/news/843ac68e424d49f983a472ef6a6be344.mp4"
               type="video/mp4" />
           </video>
@@ -110,7 +111,7 @@
           <p class="wrongTitle">错题集</p>
           <div class="wrongContainer">
           </div>
-          <div class="downloadBtn">
+          <div class="downloadBtn" onclick="downloadApp()">
             <img src="./img/scoreBtn.png" alt="">
           </div>
         </div>
@@ -147,6 +148,10 @@
   beginAnswer()
   // initScoreView(35, [5, 12, 18])
   initClockView('测试', '在本次网上“开学第一课”中，你表现突出，成绩优异，获得满分，特授予你“防疫小先锋”称号，以资鼓励。', '吉利中学')
+
+  function downloadApp() {
+    window.location.href = "https://content.foshanplus.com/download.html"
+  }
 </script>
 
 </html>

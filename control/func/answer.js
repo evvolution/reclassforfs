@@ -194,7 +194,7 @@ function checkScore() {
 
 // 打卡按钮
 function createPoster() {
-	$.fn.fullpage.moveSectionDown()
+	$.fn.fullpage.moveTo(6,0)
 }
 
 // 第几道题
