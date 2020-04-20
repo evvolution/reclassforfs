@@ -81,7 +81,7 @@ body{
 .choicedetail {
   width: 100%;
   padding: 0px 12px 0px 50px;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 22px;
   color: #333;
 }
@@ -138,7 +138,7 @@ button:focus {
 }
 
 #dis-nextBtn,#nextBtn,.nextPassBtn {
-  margin-top: 24px;
+  margin-top: 12px;
   float: right;
   overflow: hidden;
 }

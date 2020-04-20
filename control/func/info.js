@@ -12,6 +12,8 @@ var schEle = document.getElementById("userschool");
 var userschool = "";
 var username = "";
 
+var userid = "";
+
 $(document).ready(function() {
   
     initfullpage();
@@ -42,12 +44,14 @@ function bindsubmit(answers,callBack){
     element = element.replace(/choices/g, '')
     answerDic[index+1] = element;
   })
+
+  userid = getParam("openid");
   console.log(answerDic);
     $.ajax({
 		type: "post",
 		async: false,
 		url: link + 'fcheck',
-    data: {'exam_id':'28','openid':'12313213232131231','answers':JSON.stringify(answerDic)},
+    data: {'exam_id':'28','openid': userid ,'answers':JSON.stringify(answerDic)},
     // data: {'exam_id':'28','openid':'12313213232131231','answers':'{"1":"A,B,C","2":"B","3":"B","4":"A","5":"A,B,C","6":"A,B,C","7":"A,B,C","8":"A,B,C","9":"A,B,C","10":"A,B,C","11":"A,B,C","12":"B,C","13":"A,B","14":"A,B,C","15":"A,C","16":"B","17":"A,B,C,D","18":"A","19":"A","20":"A"}'},
 
 		success: function(data){
@@ -62,7 +66,6 @@ function bindsubmit(answers,callBack){
 
 
 function bindgetschools(){
-
   dis = fsschools.schools[0].district;
   sch = fsschools.schools[0].managed;
 
@@ -102,4 +105,13 @@ function start(){
   }else{
     $.fn.fullpage.moveSectionDown();
   }
+}
+
+function getParam(paramName) {
+  paramValue = "", isFound = !1;
+  if (this.location.search.indexOf("?") == 0 && this.location.search.indexOf("=") > 1) {
+      arrSource = unescape(this.location.search).substring(1, this.location.search.length).split("&"), i = 0;
+      while (i < arrSource.length && !isFound) arrSource[i].indexOf("=") > 0 && arrSource[i].split("=")[0].toLowerCase() == paramName.toLowerCase() && (paramValue = arrSource[i].split("=")[1], isFound = !0), i++
+  }
+  return paramValue == "" && (paramValue = null), paramValue
 }
