@@ -92,26 +92,19 @@ function next() {
 		choiceSelection = null
 	}
 	if (choiceSelections.length > 0) {
+    choiceSelections = choiceSelections.sort()
 		totalAnswer.push(choiceSelections.join(','))
 		choiceSelections = []
 	}
 	if (examIndex < currentExercises.length) {
-		actionOut(
-			'#choices-container',
-			'action_scaleOut',
-			0.4,
-			'linear',
-			() => {
-				var choicesContainer = document.getElementById(
-					'choices-container'
-				)
-				choicesContainer.innerHTML = ''
-				var exercise = currentExercises[examIndex]
-				initChoicesView(exercise)
-				initVideo(exercise)
-				refreshNextState()
-			}
-		)
+		actionOut('#choices-container', 'action_scaleOut', 0.4, 'linear', () => {
+			var choicesContainer = document.getElementById('choices-container')
+			choicesContainer.innerHTML = ''
+			var exercise = currentExercises[examIndex]
+			initChoicesView(exercise)
+			initVideo(exercise)
+			refreshNextState()
+		})
 	} else {
 		// 最后一关
 		if (passIndex === 2) {
@@ -192,7 +185,7 @@ function checkScore() {
 
 // 打卡按钮
 function createPoster() {
-	$.fn.fullpage.moveTo(6,0)
+	$.fn.fullpage.moveTo(6, 0)
 }
 
 // 第几道题
@@ -227,10 +220,16 @@ function actionIn(obj, actionName, time, speed) {
 		'-webkit-animation': actionName + ' ' + time + 's' + ' ' + speed,
 		'-webkit-animation-fill-mode': 'forwards',
 	})
+
+	// setTimeout(() => {
+	// 	$(obj).css({ visibility: 'visible' })
+	// }, 300)
 }
 
 /*obj,actionName,speed都是 string,time(秒)是int类型*/
 function actionOut(obj, actionName, time, speed, callBack) {
+	console.log('隐藏')
+	console.log(actionName + ' ' + time + 's' + ' ' + speed)
 	$(obj).css({
 		animation: actionName + ' ' + time + 's' + ' ' + speed,
 		'-webkit-animation': actionName + ' ' + time + 's' + ' ' + speed,

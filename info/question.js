@@ -24,7 +24,7 @@ var fsquestions = {
 	"questionandkey": [
 		[
 			{
-				"questions": "如何正确佩戴口罩?(多选)",
+				"questions": "1.如何正确佩戴口罩?(多选)",
 				"type": 1,
         "video": "https://fsnewsres.foshanplus.com/news/843ac68e424d49f983a472ef6a6be344.mp4",
         "poster":"./img/videoPoster_1.jpg",
@@ -35,7 +35,7 @@ var fsquestions = {
 				]
 			},
 			{
-				"questions": "使用过的口罩该怎么处理?(单选)",
+				"questions": "2.使用过的口罩该怎么处理?(单选)",
 				"type": 0,
         "video": "https://fsnewsres.foshanplus.com/news/843ac68e424d49f983a472ef6a6be344.mp4",
         "poster":"./img/videoPoster_1.jpg",
@@ -46,21 +46,21 @@ var fsquestions = {
 				]
 			},
 			{
-				"questions": "双手洗干净后，能否用手接触水龙头?(单选)",
+				"questions": "3.双手洗干净后，能否用手接触水龙头?(单选)",
 				"type": 0,
         "video": "https://fsnewsres.foshanplus.com/news/8b06672f337c463fae6959e9919fbc92.mp4",
         "poster":"./img/videoPoster_2.jpg",
 				"keys": ["能", "尽量不"]
 			},
 			{
-				"questions": "在洗擦手的过程中，至少要洗几秒?(单选)",
+				"questions": "4.在洗擦手的过程中，至少要洗几秒?(单选)",
 				"type": 0,
         "video": "https://fsnewsres.foshanplus.com/news/8b06672f337c463fae6959e9919fbc92.mp4",
         "poster":"./img/videoPoster_2.jpg",
 				"keys": ["10秒", "5秒"]
 			},
 			{
-				"questions": "以下关于“七步洗手法”描述正确的是?(多选)",
+				"questions": "5.以下关于“七步洗手法”描述正确的是?(多选)",
 				"type": 1,
         "video": "https://fsnewsres.foshanplus.com/news/8b06672f337c463fae6959e9919fbc92.mp4",
         "poster":"./img/videoPoster_2.jpg",
@@ -73,7 +73,7 @@ var fsquestions = {
 		],
 		[
 			{
-				"questions": "离家返校前如何做(多选)",
+				"questions": "6.离家返校前如何做(多选)",
 				"type": 1,
 				"keys": [
 					"准备好相关的学习用品",
@@ -82,7 +82,7 @@ var fsquestions = {
 				]
 			},
 			{
-				"questions": "进入校园前如何做(多选)",
+				"questions": "7.进入校园前如何做(多选)",
 				"type": 1,
 				"keys": [
 					"保持1米以上间隔排队进行校门测温晨检，体温正常进校门",
@@ -91,7 +91,7 @@ var fsquestions = {
 				]
 			},
 			{
-				"questions": "室内课怎么上?(多选)",
+				"questions": "8.室内课怎么上?(多选)",
 				"type": 1,
 				"keys": [
 					"在会议室、课室、宿舍等封闭、人员密集空间或与他人近距离接触（小于等于1米）时应佩戴口罩",
@@ -100,7 +100,7 @@ var fsquestions = {
 				]
 			},
 			{
-				"questions": "大型活动怎么举行?(多选)",
+				"questions": "9.大型活动怎么举行?(多选)",
 				"type": 1,
 				"keys": [
 					"不举办室内聚集性的活动",
@@ -109,7 +109,7 @@ var fsquestions = {
 				]
 			},
 			{
-				"questions": "体育锻炼及作息如何开展?(多选)",
+				"questions": "10.体育锻炼及作息如何开展?(多选)",
 				"type": 1,
 				"keys": [
 					"学校正常开展体育课，确保体育与健康课程落实",
@@ -118,7 +118,7 @@ var fsquestions = {
 				]
 			},
 			{
-				"questions": "校园环境卫生如何保障?(多选)",
+				"questions": "11.校园环境卫生如何保障?(多选)",
 				"type": 1,
 				"keys": [
 					"疫情解除前停止使用集中空调通风系统，重新开启使用前应规范清洗和消毒",
@@ -127,7 +127,7 @@ var fsquestions = {
 				]
 			},
 			{
-				"questions": "课间活动如何开展?(多选)",
+				"questions": "12.课间活动如何开展?(多选)",
 				"type": 1,
 				"keys": [
 					"课间休息时串班、串年级",
@@ -136,7 +136,7 @@ var fsquestions = {
 				]
 			},
 			{
-				"questions": "就餐如何安排?(多选)",
+				"questions": "13.就餐如何安排?(多选)",
 				"type": 1,
 				"keys": [
 					"规范就餐流程，尽量集中分餐、送餐到班，要分散就餐，避免集中",
@@ -145,7 +145,7 @@ var fsquestions = {
 				]
 			},
 			{
-				"questions": "放学回家如何做?(多选)",
+				"questions": "14.放学回家如何做?(多选)",
 				"type": 1,
 				"keys": [
 					"放学回家不在外逗留",
@@ -154,7 +154,7 @@ var fsquestions = {
 				]
 			},
 			{
-				"questions": "个人日常疫情防控要做到哪些?(多选)",
+				"questions": "15.个人日常疫情防控要做到哪些?(多选)",
 				"type": 1,
 				"keys": [
 					"注册“粤康码”，每天登录依时亮码（可由家长代劳）",
@@ -165,14 +165,14 @@ var fsquestions = {
 		],
 		[
 			{
-				"questions": "赵静波教授在视频中与同学们进行了一个心理小实验，出现的动物是?(单选)",
+				"questions": "16.赵静波教授在视频中与同学们进行了一个心理小实验，出现的动物是?(单选)",
         "type": 0,
         "video": "https://fsnewsres.foshanplus.com/news/e5e8a0e38c094e9c91e55178f81446ca.mp4",
         "poster":"./img/videoPoster_3.jpg",
 				"keys": ["马", "兔子", "猴子"]
 			},
 			{
-				"questions": "赵静波教授在视频中分享的备考锦囊有哪些?(多选)",
+				"questions": "17.赵静波教授在视频中分享的备考锦囊有哪些?(多选)",
         "type": 1,
         "video": "https://fsnewsres.foshanplus.com/news/e5e8a0e38c094e9c91e55178f81446ca.mp4",
         "poster":"./img/videoPoster_3.jpg",
@@ -184,7 +184,7 @@ var fsquestions = {
 				]
 			},
 			{
-				"questions": "进行呼吸放松时第一步应该是?(单选)",
+				"questions": "18.进行呼吸放松时第一步应该是?(单选)",
         "type": 0,
         "video": "https://fsnewsres.foshanplus.com/news/e5e8a0e38c094e9c91e55178f81446ca.mp4",
         "poster":"./img/videoPoster_3.jpg",
@@ -195,14 +195,14 @@ var fsquestions = {
 				]
 			},
 			{
-				"questions": "情绪管理的步骤包括觉察情绪、命名情绪、接纳情绪、表达情绪和？(单选)",
+				"questions": "19.情绪管理的步骤包括觉察情绪、命名情绪、接纳情绪、表达情绪和？(单选)",
         "type": 0,
         "video": "https://fsnewsres.foshanplus.com/news/e5e8a0e38c094e9c91e55178f81446ca.mp4",
         "poster":"./img/videoPoster_3.jpg",
 				"keys": ["对", "错"]
 			},
 			{
-				"questions": "佛山市24小时心理援助热线是0757-82667888?(单选)",
+				"questions": "20.佛山市24小时心理援助热线是0757-82667888?(单选)",
         "type": 0,
         "video": "https://fsnewsres.foshanplus.com/news/e5e8a0e38c094e9c91e55178f81446ca.mp4",
         "poster":"./img/videoPoster_3.jpg",

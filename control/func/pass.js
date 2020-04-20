@@ -29,12 +29,13 @@ function initPassView(passIndex) {
 	if (passIndex > 2) {
 		return
 	}
-	var topTitles = ['一', '二', '三']
+  var topTitles = ['一', '二', '三']
+  var medalTitles = ['卫生','校园','心理']
 	var topTitle = $('#passFinish .top-medalContainer .title')
 	var topMedal = $('#passFinish .top-medalContainer .icon')
 	var bottomItems = Array.from($('#passFinish .bottom-medalContainer .item'))
 	topTitle.text(
-		'恭喜你完成第' + topTitles[passIndex] + '关，成功获得一枚勋章'
+    '恭喜你完成第'+ topTitles[passIndex] +'关， 成功获得一枚'+ medalTitles[passIndex] + '防疫勋章'
 	)
 	topMedal.attr('src', './img/topMedal-' + (passIndex + 1) + '.png')
 	bottomItems.forEach((element, index) => {
