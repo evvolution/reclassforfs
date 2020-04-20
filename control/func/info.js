@@ -90,8 +90,8 @@ function bindgetschools(){
   //       }
   //     }
   // });
-  fsschools = data.schools[0].district;
-  fsschools = data.schools[0].managed;
+  dis = fsschools.schools[0].district;
+  sch = fsschools.schools[0].managed;
 
   for (var i = 0; i < dis.length; i++) {
     //声明option.<option value="pres[i]">Pres[i]</option>
