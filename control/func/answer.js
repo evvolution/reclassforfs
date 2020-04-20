@@ -43,7 +43,7 @@ function multipleSelection(e) {
 // 初始化选项 问题
 function initChoicesView(exercise) {
 	initBeginView(passIndex)
-	initPassView(passIndex, answerResult)
+	initPassView(passIndex)
 
 	var choicesContainer = document.getElementById('choices-container')
 	var imageArr = ['img/A.png', 'img/B.png', 'img/C.png', 'img/D.png']
@@ -119,7 +119,8 @@ function next() {
 		if (passIndex === 2) {
 			// 提交数据
 			bindsubmit(totalAnswer, (data) => {
-				initBeginView(passIndex + 1)
+				answerResult = data
+				initBeginView(passIndex + 1, data)
 				$.fn.fullpage.moveSectionDown()
 			})
 		} else {
@@ -193,8 +194,7 @@ function checkScore() {
 
 // 打卡按钮
 function createPoster() {
-  $.fn.fullpage.moveSectionDown()
-  initClockView('测试', '在本次网上“开学第一课”中，你表现突出，成绩优异，获得满分，特授予你“防疫小先锋”称号，以资鼓励。', '吉利中学')
+	$.fn.fullpage.moveSectionDown()
 }
 
 // 第几道题

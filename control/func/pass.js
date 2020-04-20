@@ -1,14 +1,31 @@
-function initBeginView(passIndex) {
+function initBeginView(passIndex, answerResult) {
 	if (passIndex > 2) {
+    if (answerResult) {
+      var nextPassBtn = document.getElementsByClassName('nextPassBtn')[0]
+      var checkScoreBtn = document.getElementsByClassName('checkScoreBtn')[0]
+      var createPosterBtn = document.getElementsByClassName(
+        'createPosterBtn'
+      )[0]
+      nextPassBtn.style.display = 'none'
+      if (answerResult.score * 5 === 100) {
+        checkScoreBtn.style.display = 'none'
+        createPosterBtn.style.display = ''
+      } else {
+        checkScoreBtn.style.display = ''
+        createPosterBtn.style.display = 'none'
+      }
+    }
+    
 		return
 	}
 	var titleImg = $('#passBegin .titleImg')
 	var descImg = $('#passBegin .descImg')
 	titleImg.attr('src', './img/beginTitle-' + (passIndex + 1) + '.png')
 	descImg.attr('src', './img/beginDesc-' + (passIndex + 1) + '.png')
+
 }
 
-function initPassView(passIndex, answerResult) {
+function initPassView(passIndex) {
 	if (passIndex > 2) {
 		return
 	}
@@ -46,21 +63,6 @@ function initPassView(passIndex, answerResult) {
 			}
 		}
 	})
-	if (passIndex === 2) {
-		var nextPassBtn = document.getElementsByClassName('nextPassBtn')[0]
-		var checkScoreBtn = document.getElementsByClassName('checkScoreBtn')[0]
-		var createPosterBtn = document.getElementsByClassName(
-			'createPosterBtn'
-		)[0]
-		nextPassBtn.style.display = 'none'
-		if (answerResult.score * 5 === 100) {
-			checkScoreBtn.style.display = 'none'
-			createPosterBtn.style.display = ''
-		} else {
-			checkScoreBtn.style.display = ''
-			createPosterBtn.style.display = 'none'
-		}
-	}
 }
 
 // 设置分数页面
@@ -68,9 +70,10 @@ function initScoreView(answerResult) {
 	var scoreDom = Array.from($('.pointSection .scoreTitle'))[0]
 	scoreDom.innerHTML = answerResult.score * 5 + '分'
 	var details = answerResult.detail
+
 	var wrongContainer = $('.pointSection .wrongContainer')
 	details.forEach((element) => {
-		if (!element.is_correct) {
+		if (!element.is_correct || element.is_correct === '0') {
 			var appendHtml =
 				'<div class="wrongItem">' +
 				element.id +
