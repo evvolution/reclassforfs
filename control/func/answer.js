@@ -74,14 +74,12 @@ function initChoicesView(exercise) {
 
 // 开始答题
 function beginAnswer() {
-	bindgetquestions((data) => {
-		infoArr = data.info
-		totalPassExercises = data.questionandkey
-		currentExercises = totalPassExercises[passIndex]
-		var exercise = currentExercises[examIndex]
-		initChoicesView(exercise)
-		initVideo(exercise)
-	})
+	infoArr = fsquestions.info
+	totalPassExercises = fsquestions.questionandkey
+	currentExercises = totalPassExercises[passIndex]
+	var exercise = currentExercises[examIndex]
+	initChoicesView(exercise)
+	initVideo(exercise)
 }
 
 // 下一题
