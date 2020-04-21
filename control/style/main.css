@@ -86,7 +86,7 @@ body{
   color: #333;
 }
 
-.questionSection .fp-tableCell,.clockSection .fp-tableCell,.pointSection .fp-tableCell {
+.questionSection .fp-tableCell,.clockSection .fp-tableCell,.pointSection .fp-tableCell,.passFinish .fp-tableCell {
   vertical-align: top!important;
 }
 
@@ -95,16 +95,17 @@ body{
 
 } */
 #passBegin .titleImg {
-  width: 203px;
-  height: 50px;
+  width: 54%;
+  height: auto;
   display: block;
   margin: 0 auto;
+  margin-top: -20px;
 }
 
 /* 开始答题 */
 #passBegin .descImg {
-  width: 283px;
-  height: 54px;
+  width: 75%;
+  height: auto;
   display: block;
   margin: 12px auto;
 }
@@ -152,11 +153,12 @@ button:focus {
   margin-top: 12px;
   float: right;
   overflow: hidden;
+  width: 40%;
 }
 
 #nextBtn img,#dis-nextBtn img,.nextPassBtn img{
-  width: 152px;
-  height: 105px;
+  width: 100%;
+  height: auto;
   src: url(../../img/next_select.png);
 }
 
@@ -180,10 +182,10 @@ button:focus {
   font-size: 18px;
 }
 .top-medalContainer .icon {
-  width: 100px;
-  height: 126px;
+  width: 26%;
+  height: auto;
   position: absolute;
-  left: calc(50% - 50px);
+  left: 37%;
   top: calc(50% - 63px);
 }
 .bottom-medalContainer {
@@ -349,4 +351,6 @@ button:focus {
   position: absolute;
   z-index: -1;
   bottom: 0;
+  left: 0;
+  width: 100%;
 }

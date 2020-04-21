@@ -36,7 +36,7 @@ function test(){
   $(".xxx").click(function(){
     $.fn.fullpage.moveSectionDown();
   });
-}
+} 
 
 function bindsubmit(answers,successBack,failBack){
   var answerDic = {}
