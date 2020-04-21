@@ -42,7 +42,7 @@ function multipleSelection(e) {
 
 // 初始化选项 问题
 function initChoicesView(exercise) {
-	initBeginView(passIndex)
+	// initBeginView(passIndex)
 	initPassView(passIndex)
 
 	var choicesContainer = document.getElementById('choices-container')
@@ -79,11 +79,18 @@ function beginAnswer() {
 	currentExercises = totalPassExercises[passIndex]
 	var exercise = currentExercises[examIndex]
 	initChoicesView(exercise)
+	initBeginView(passIndex)
+
 	initVideo(exercise)
 }
 
 // 下一题
 function next() {
+	// 还未选择或者不是重置 不能下一题
+	if (!choiceSelection && choiceSelections.length === 0 && examIndex !== -1) {
+		console.log('还未选题')
+		return;
+	}
 	examIndex++
 	// 重置
 	if (choiceSelection) {
@@ -135,13 +142,22 @@ function next() {
 			)
 		} else {
 			initBeginView(passIndex + 1)
-			$.fn.fullpage.moveSectionDown()
+			checkPassResult()
 		}
 	}
 }
 
-// 提示还未作答
-function tipsNext() {}
+// 检查每一关的结果
+function checkPassResult() {
+	bindsubmit(totalAnswer,()=>{
+		// 有奖牌
+		$.fn.fullpage.moveSectionDown()
+	},()=>{
+		// 失败无奖牌
+		$.fn.fullpage.silentMoveTo(2, 0)
+		nextPass(false)
+	})
+}
 
 function refreshNextState() {
 	var nextBtn = document.getElementById('nextBtn')
@@ -163,18 +179,22 @@ function deleteItem(str) {
 	}
 }
 
-// 下一关
-function nextPass() {
+// 下一关 needMove 是否需要下一页
+function nextPass(needMove) {
 	passIndex++
 	if (passIndex >= totalPassExercises.length) {
 		// 全部通关
-		$.fn.fullpage.moveSectionDown()
+		if (needMove) {
+			$.fn.fullpage.moveSectionDown()
+		}
 	} else {
 		// 下一关
 		examIndex = -1
 		currentExercises = totalPassExercises[passIndex]
 		next()
-		$.fn.fullpage.silentMoveTo(2, 0)
+		if (needMove) {
+			$.fn.fullpage.silentMoveTo(2, 0)
+		}
 	}
 }
 
@@ -233,6 +253,8 @@ var infoArr = []
 // 视频源
 var videoSrc = ''
 
+// 是否获取奖牌
+var getMedal = true
 // 答题结果
 var answerResult = {}
 
@@ -250,6 +272,8 @@ function actionIn(obj, actionName, time, speed) {
 	// 	$(obj).css({ visibility: 'visible' })
 	// }, 300)
 }
+
+
 
 /*obj,actionName,speed都是 string,time(秒)是int类型*/
 function actionOut(obj, actionName, time, speed, callBack) {

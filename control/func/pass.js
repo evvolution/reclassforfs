@@ -1,5 +1,6 @@
 function initBeginView(passIndex, answerResult) {
 	if (passIndex > 2) {
+		// 设置是查看分数还是生成海报
 		if (answerResult) {
 			var nextPassBtn = document.getElementsByClassName('nextPassBtn')[0]
 			var checkScoreBtn = document.getElementsByClassName(
@@ -30,6 +31,7 @@ function initPassView(passIndex) {
 	if (passIndex > 2) {
 		return
 	}
+	console.log(getMedal)
 	var topTitles = ['一', '二', '三']
 	var medalTitles = ['卫生', '校园', '心理']
 	var topTitle = $('#passFinish .top-medalContainer .title')

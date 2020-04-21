@@ -81,7 +81,7 @@ body{
 .choicedetail {
   width: 100%;
   padding: 0px 12px 0px 50px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 22px;
   color: #333;
 }
@@ -95,7 +95,7 @@ body{
 
 } */
 #passBegin .titleImg {
-  width: 54%;
+  width: 74%;
   height: auto;
   display: block;
   margin: 0 auto;
@@ -104,7 +104,7 @@ body{
 
 /* 开始答题 */
 #passBegin .descImg {
-  width: 75%;
+  width: 85%;
   height: auto;
   display: block;
   margin: 12px auto;
@@ -117,7 +117,7 @@ body{
   position: absolute;
   color: #999;
   line-height: 20px;
-  font-size: 14px;
+  font-size: 15px;
   text-align: center;
 }
 
