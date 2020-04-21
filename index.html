@@ -19,22 +19,7 @@
 <body>
   <div class="container-fluid">
     <div id="fullpage">
-<!-- 分数页 -->
-<div class="fspsection section pointSection">
-  <div>
-    <img class="scoreBg" src="http://img.foshanplus.com/2020/pic/04/scoreBg.png" alt="">
-    <!-- <img class="scoreBg" src="./img/scoreBg.png" alt=""> -->
-    <p class="scoreTitle"></p>
-    <p class="scoreDesc">满分贴士：视频里会有题目的答案哦，多选题你有没有少选了一个选项呢？不是满分没关系，快去佛山+重新答题拿满分吧！</p>
-    <p class="wrongTitle">错题集</p>
-    <div class="wrongContainer">
-    </div>
-    <div class="downloadBtn" onclick="downloadApp()">
-      <img src="http://img.foshanplus.com/2020/pic/04/scoreBtn.png" alt="">
-      <!-- <img src="./img/scoreBtn.png" alt=""> -->
-    </div>
-  </div>
-</div>
+
       <div class="fspsection section">
         <div class="noticeforinput">请填写你的信息</div>
         <div class="selectgroup form-group">
@@ -132,7 +117,22 @@
         </div>
 
       </div>
-      
+      <!-- 分数页 -->
+      <div class="fspsection section pointSection">
+        <div>
+          <img class="scoreBg" src="http://img.foshanplus.com/2020/pic/04/scoreBg.png" alt="">
+          <!-- <img class="scoreBg" src="./img/scoreBg.png" alt=""> -->
+          <p class="scoreTitle"></p>
+          <p class="scoreDesc">满分贴士：视频里会有题目的答案哦，多选题你有没有少选了一个选项呢？不是满分没关系，快去佛山+重新答题拿满分吧！</p>
+          <p class="wrongTitle">错题集</p>
+          <div class="wrongContainer">
+          </div>
+          <div class="downloadBtn" onclick="downloadApp()">
+            <img src="http://img.foshanplus.com/2020/pic/04/scoreBtn.png" alt="">
+            <!-- <img src="./img/scoreBtn.png" alt=""> -->
+          </div>
+        </div>
+      </div>
       <!-- 打卡页 -->
       <div class="fspsection section clockSection">
         <div class="clock-container">
@@ -170,9 +170,9 @@
   beginAnswer()
   // initScoreView(35, [5, 12, 18])
   function downloadApp() {
-    window.location.href = "https://content.foshanplus.com/download.html?type=7&newsId=0&newsUrl=https://file910a50777a97.aiwall.com/v3/idea/v9GbD9QU&subscription=0"
+    window.location.href =
+      "https://content.foshanplus.com/download.html?type=7&newsId=0&newsUrl=https://file910a50777a97.aiwall.com/v3/idea/v9GbD9QU&subscription=0"
   }
-
 </script>
 
 </html>
