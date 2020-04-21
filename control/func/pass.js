@@ -92,6 +92,8 @@ function initScoreView(answerResult) {
 
 // 设置打卡页面数据
 function initClockView(name, content, school) {
+  inputName = name;
+  selectSchool = school;
 	var contentDoms = Array.from($('.clockSection .clock-container p'))
 	console.log(contentDoms)
 	contentDoms.forEach((element, index) => {
@@ -107,3 +109,9 @@ function initClockView(name, content, school) {
 		}
 	})
 }
+
+
+// 输入的名字
+var inputName = ''
+// 选择学校
+var selectSchool = ''

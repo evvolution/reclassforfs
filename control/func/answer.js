@@ -92,28 +92,47 @@ function next() {
 		choiceSelection = null
 	}
 	if (choiceSelections.length > 0) {
-    choiceSelections = choiceSelections.sort()
+		choiceSelections = choiceSelections.sort()
 		totalAnswer.push(choiceSelections.join(','))
 		choiceSelections = []
 	}
 	if (examIndex < currentExercises.length) {
-		actionOut('#choices-container', 'action_scaleOut', 0.4, 'linear', () => {
-			var choicesContainer = document.getElementById('choices-container')
-			choicesContainer.innerHTML = ''
-			var exercise = currentExercises[examIndex]
-			initChoicesView(exercise)
-			initVideo(exercise)
-			refreshNextState()
-		})
+		actionOut(
+			'#choices-container',
+			'action_scaleOut',
+			0.4,
+			'linear',
+			() => {
+				var choicesContainer = document.getElementById(
+					'choices-container'
+				)
+				choicesContainer.innerHTML = ''
+				var exercise = currentExercises[examIndex]
+				initChoicesView(exercise)
+				initVideo(exercise)
+				refreshNextState()
+			}
+		)
 	} else {
 		// 最后一关
 		if (passIndex === 2) {
 			// 提交数据
-			bindsubmit(totalAnswer, (data) => {
-				answerResult = data
-				initBeginView(passIndex + 1, data)
-				$.fn.fullpage.moveSectionDown()
-			})
+			document.getElementById('loader').style.visibility = ''
+			bindsubmit(
+				totalAnswer,
+				(data) => {
+					document.getElementById('loader').style.visibility =
+						'hidden'
+					answerResult = data
+					initBeginView(passIndex + 1, data)
+					$.fn.fullpage.moveSectionDown()
+				},
+				() => {
+					document.getElementById('loader').style.visibility =
+						'hidden'
+					alert('网络错误，请重新提交')
+				}
+			)
 		} else {
 			initBeginView(passIndex + 1)
 			$.fn.fullpage.moveSectionDown()
@@ -186,6 +205,12 @@ function checkScore() {
 // 打卡按钮
 function createPoster() {
 	$.fn.fullpage.moveTo(6, 0)
+	var user = {
+		name: inputName,
+		school: selectSchool,
+	}
+	// 传值
+	window.parent.postMessage(JSON.stringify(user), '*')
 }
 
 // 第几道题

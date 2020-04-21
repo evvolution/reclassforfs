@@ -12,13 +12,14 @@
   <link rel="stylesheet" type="text/css" href="plugins/fullpage/fullpage.min.css">
   <link rel="stylesheet" type="text/css" href="control/style/main.css">
   <link rel="stylesheet" href="control/style/answer.css">
+  <link rel="stylesheet" href="control/style/loaders.min.css">
   <link href="plugins/video/video-js.css" rel="stylesheet">
 </head>
 
 <body>
   <div class="container-fluid">
     <div id="fullpage">
-      
+
       <div class="fspsection section">
         <div class="noticeforinput">请填写你的信息</div>
         <div class="selectgroup form-group">
@@ -72,6 +73,15 @@
             <img src="./img/next_selected.png" alt="">
           </div>
         </div>
+        <div class="loader" id="loader" style="visibility: hidden;">
+          <div class="loader-inner ball-pulse"
+            style="position: absolute;left: 0;top: 45%;width: 100%;text-align: center;">
+            <div></div>
+            <div></div>
+            <div></div>
+            <p style="color: white;">获取分数中</p>
+          </div>
+        </div>
       </div>
       <div class="fspsection section" id="passFinish">
         <div class="top-medalContainer">
@@ -105,6 +115,7 @@
           <img src="http://img.foshanplus.com/2020/pic/04/createPoster.png" alt="">
           <!-- <img src="./img/createPoster.png" alt=""> -->
         </div>
+
       </div>
       <!-- 分数页 -->
       <div class="fspsection section pointSection">
@@ -158,7 +169,6 @@
 <script type="text/javascript">
   beginAnswer()
   // initScoreView(35, [5, 12, 18])
-  initClockView('测试', '在本次网上“开学第一课”中，你表现突出，成绩优异，获得满分，特授予你“防疫小先锋”称号，以资鼓励。', '吉利中学')
 
   function downloadApp() {
     window.location.href = "https://content.foshanplus.com/download.html"

@@ -38,7 +38,7 @@ function test(){
   });
 }
 
-function bindsubmit(answers,callBack){
+function bindsubmit(answers,successBack,failBack){
   var answerDic = {}
   answers.forEach((element,index) => {
     element = element.replace(/choices/g, '')
@@ -49,16 +49,16 @@ function bindsubmit(answers,callBack){
   console.log(answerDic);
     $.ajax({
 		type: "post",
-		async: false,
+		async: true,
 		url: link + 'fcheck',
     data: {'exam_id':'28','openid': userid ,'answers':JSON.stringify(answerDic)},
     // data: {'exam_id':'28','openid':'12313213232131231','answers':'{"1":"A,B,C","2":"B","3":"B","4":"A","5":"A,B,C","6":"A,B,C","7":"A,B,C","8":"A,B,C","9":"A,B,C","10":"A,B,C","11":"A,B,C","12":"B,C","13":"A,B","14":"A,B,C","15":"A,C","16":"B","17":"A,B,C,D","18":"A","19":"A","20":"A"}'},
 
 		success: function(data){
-        callBack(data.data)
+      successBack(data.data)
 		},
 		error: function(){
-      
+      failBack()
 		}
 	});
 }
@@ -103,6 +103,8 @@ function start(){
     alert("请填写个人信息");
     return;
   }else{
+    initClockView(username, '在本次网上“开学第一课”中，你表现突出，成绩优异，获得满分，特授予你“防疫小先锋”称号，以资鼓励。', userschool)
+
     $.fn.fullpage.moveSectionDown();
   }
 }
