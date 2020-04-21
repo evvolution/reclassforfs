@@ -91,9 +91,9 @@ body{
 }
 
 /* 开始答题 */
-#passBegin {
+/* #passBegin {
 
-}
+} */
 #passBegin .titleImg {
   width: 203px;
   height: 50px;

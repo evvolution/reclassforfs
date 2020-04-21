@@ -37,7 +37,8 @@ function initPassView(passIndex) {
 	topTitle.text(
     '恭喜你完成第'+ topTitles[passIndex] +'关， 成功获得一枚'+ medalTitles[passIndex] + '防疫勋章'
 	)
-	topMedal.attr('src', './img/topMedal-' + (passIndex + 1) + '.png')
+	topMedal.attr('src', 'http://img.foshanplus.com/2020/pic/04/topMedal-' + (passIndex + 1) + '.png')
+	// topMedal.attr('src', './img/topMedal-' + (passIndex + 1) + '.png')
 	bottomItems.forEach((element, index) => {
 		var bottomImg = element.children[0]
 		var bottomTitle = element.children[1]
@@ -45,22 +46,27 @@ function initPassView(passIndex) {
 		if (index === 0) {
 			// 第一个
 			// bottomImg.attr("src", './img/bottomMedal-1.png')
-			bottomImg.src = './img/bottomMedal-1.png'
+			bottomImg.src = 'http://img.foshanplus.com/2020/pic/04/bottomMedal-1.png'
+			// bottomImg.src = './img/bottomMedal-1.png'
 		} else if (index === 1) {
 			// 第二个
 			if (passIndex < 1) {
-				bottomImg.src = './img/disMedal-2.png'
+				bottomImg.src = 'http://img.foshanplus.com/2020/pic/04/disMedal-2.png'
+				// bottomImg.src = './img/disMedal-2.png'
 				bottomTitle.style.color = '#CCC'
 			} else {
-				bottomImg.src = './img/bottomMedal-2.png'
+				bottomImg.src = 'http://img.foshanplus.com/2020/pic/04/bottomMedal-2.png'
+				// bottomImg.src = './img/bottomMedal-2.png'
 			}
 		} else if (index === 2) {
 			// 第三个
 			if (passIndex < 2) {
-				bottomImg.src = './img/disMedal-3.png'
+				bottomImg.src = 'http://img.foshanplus.com/2020/pic/04/disMedal-3.png'
+				// bottomImg.src = './img/disMedal-3.png'
 				bottomTitle.style.color = '#CCC'
 			} else {
-				bottomImg.src = './img/bottomMedal-3.png'
+				bottomImg.src = 'http://img.foshanplus.com/2020/pic/04/bottomMedal-3.png'
+				// bottomImg.src = './img/bottomMedal-3.png'
 			}
 		}
 	})
