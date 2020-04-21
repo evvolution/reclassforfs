@@ -35,7 +35,7 @@ var fsquestions = {
 				]
 			},
 			{
-				"questions": "2.使用过的口罩该怎么处理?(单选)",
+				"questions": "2.使用过的口罩该怎么处理?",
 				"type": 0,
         "video": "https://fsnewsres.foshanplus.com/news/843ac68e424d49f983a472ef6a6be344.mp4",
         "poster":"./img/videoPoster_1.jpg",
@@ -46,14 +46,14 @@ var fsquestions = {
 				]
 			},
 			{
-				"questions": "3.双手洗干净后，能否用手接触水龙头?(单选)",
+				"questions": "3.双手洗干净后，能否用手接触水龙头?",
 				"type": 0,
         "video": "https://fsnewsres.foshanplus.com/news/8b06672f337c463fae6959e9919fbc92.mp4",
         "poster":"./img/videoPoster_2.jpg",
 				"keys": ["能", "尽量不"]
 			},
 			{
-				"questions": "4.在洗擦手的过程中，至少要洗几秒?(单选)",
+				"questions": "4.在洗擦手的过程中，至少要洗几秒?",
 				"type": 0,
         "video": "https://fsnewsres.foshanplus.com/news/8b06672f337c463fae6959e9919fbc92.mp4",
         "poster":"./img/videoPoster_2.jpg",
@@ -165,7 +165,7 @@ var fsquestions = {
 		],
 		[
 			{
-				"questions": "16.赵静波教授在视频中与同学们进行了一个心理小实验，出现的动物是?(单选)",
+				"questions": "16.赵静波教授在视频中与同学们进行了一个心理小实验，出现的动物是?",
         "type": 0,
         "video": "https://fsnewsres.foshanplus.com/news/e5e8a0e38c094e9c91e55178f81446ca.mp4",
         "poster":"./img/videoPoster_3.jpg",
@@ -184,7 +184,7 @@ var fsquestions = {
 				]
 			},
 			{
-				"questions": "18.进行呼吸放松时第一步应该是?(单选)",
+				"questions": "18.进行呼吸放松时第一步应该是?",
         "type": 0,
         "video": "https://fsnewsres.foshanplus.com/news/e5e8a0e38c094e9c91e55178f81446ca.mp4",
         "poster":"./img/videoPoster_3.jpg",
@@ -195,14 +195,14 @@ var fsquestions = {
 				]
 			},
 			{
-				"questions": "19.情绪管理的步骤包括觉察情绪、命名情绪、接纳情绪、表达情绪和？(单选)",
+				"questions": "19.情绪管理的步骤包括觉察情绪、命名情绪、接纳情绪、表达情绪?",
         "type": 0,
         "video": "https://fsnewsres.foshanplus.com/news/e5e8a0e38c094e9c91e55178f81446ca.mp4",
         "poster":"./img/videoPoster_3.jpg",
 				"keys": ["对", "错"]
 			},
 			{
-				"questions": "20.佛山市24小时心理援助热线是0757-82667888?(单选)",
+				"questions": "20.佛山市24小时心理援助热线是0757-82667888?",
         "type": 0,
         "video": "https://fsnewsres.foshanplus.com/news/e5e8a0e38c094e9c91e55178f81446ca.mp4",
         "poster":"./img/videoPoster_3.jpg",
