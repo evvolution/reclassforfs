@@ -195,14 +195,14 @@ var fsquestions = {
 				]
 			},
 			{
-				"questions": "19.情绪管理的步骤包括觉察情绪、命名情绪、接纳情绪、表达情绪?",
+				"questions": "19.情绪管理的步骤包括觉察情绪、命名情绪、接纳情绪、表达情绪",
         "type": 0,
         "video": "https://fsnewsres.foshanplus.com/news/e5e8a0e38c094e9c91e55178f81446ca.mp4",
         "poster":"./img/videoPoster_3.jpg",
 				"keys": ["对", "错"]
 			},
 			{
-				"questions": "20.佛山市24小时心理援助热线是0757-82667888?",
+				"questions": "20.佛山市24小时心理援助热线是0757-82667888",
         "type": 0,
         "video": "https://fsnewsres.foshanplus.com/news/e5e8a0e38c094e9c91e55178f81446ca.mp4",
         "poster":"./img/videoPoster_3.jpg",
