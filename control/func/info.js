@@ -139,3 +139,11 @@ function getParam(paramName) {
   }
   return paramValue == "" && (paramValue = null), paramValue
 }
+
+
+function visitorsmode(){
+  userschool = "";
+  username = "游客";
+  initClockView(username, userschool)
+  $.fn.fullpage.moveSectionDown();
+}
