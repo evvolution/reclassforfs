@@ -122,7 +122,12 @@ function initClockView(name, school) {
 	var content =
 		'在本次网上“开学第一课”中，你表现突出，成绩优异，获得' +
 		finalScore +
-		'分，特授予你“防疫小先锋”称号，以资鼓励。'
+    '分，'
+  if(finalScore === 100) {
+    content = content + '特授予你“防疫小先锋”称号，以资鼓励。'
+  }else {
+    content = content + '再接再厉。'
+  }
 	inputName = name ? name : inputName
 	selectSchool = school ? school : selectSchool
 	var contentDoms = Array.from($('.clockSection .clock-container p'))
