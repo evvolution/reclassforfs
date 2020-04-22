@@ -228,7 +228,7 @@ function checkScore() {
 
 // 打卡按钮
 function createPoster() {
-	$.fn.fullpage.moveTo(7, 0)
+	// $.fn.fullpage.moveTo(7, 0)
 	var user = {
 		name: inputName,
 		school: selectSchool,
