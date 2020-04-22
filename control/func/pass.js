@@ -1,6 +1,7 @@
 function initBeginView(passIndex, answerResult) {
 	if (passIndex > 2) {
 		// 设置是查看分数还是生成海报
+		finalScore = answerResult.score * 5
 		initClockView()
 		initLikeView()
 		return
@@ -191,10 +192,10 @@ function like() {
 		} else {
 			checkScoreBtn.style.display = ''
 			createPosterBtn.style.display = 'none'
-    }
-    
-    likeCount++
-    setLikeCount()
+		}
+
+		likeCount++
+		setLikeCount()
 	}
 }
 
@@ -206,12 +207,12 @@ function closeQuestionItem() {
 
 function initLikeView() {
 	getLikeCount((data) => {
-    likeCount = data.vote_count
-    setLikeCount()
+		likeCount = data.vote_count
+		setLikeCount()
 	})
 }
 function setLikeCount() {
-  var likebtn = $('.jiyuSection #likeCount')
+	var likebtn = $('.jiyuSection #likeCount')
 	likebtn.text('*已有' + likeCount + '名师生为院士们点赞')
 }
 
