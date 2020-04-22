@@ -19,7 +19,7 @@ function initBeginView(passIndex, answerResult) {
 				createPosterBtn.style.display = 'none'
 			}
 		}
-
+    initClockView()
 		return
 	}
 	var titleImg = $('#passBegin .titleImg')
@@ -32,7 +32,6 @@ function initPassView(passIndex) {
 	if (passIndex > 2) {
 		return
 	}
-	console.log(getMedal)
 	var topTitles = ['一', '二', '三']
 	var medalTitles = ['卫生', '校园', '心理']
 	var topTitle = $('#passFinish .top-medalContainer .title')
@@ -124,20 +123,19 @@ function initClockView(name, school) {
 		'在本次网上“开学第一课”中，你表现突出，成绩优异，获得' +
 		finalScore +
 		'分，特授予你“防疫小先锋”称号，以资鼓励。'
-	inputName = name
-	selectSchool = school
+	inputName = name ? name : inputName
+	selectSchool = school ? school : selectSchool
 	var contentDoms = Array.from($('.clockSection .clock-container p'))
-	console.log(contentDoms)
 	contentDoms.forEach((element, index) => {
 		if (index === 0) {
 			// 标题
-			element.innerHTML = name
+			element.innerHTML = inputName
 		}
 		if (index === 1) {
 			element.innerHTML = content
 		}
 		if (index === 2) {
-			element.innerHTML = school
+			element.innerHTML = selectSchool
 		}
 	})
 }
@@ -174,7 +172,7 @@ function checkQuestionItem(index) {
 	yourAnswer.text(
 		'正确答案是：' +
 			item.answer +
-			'  您的答案：' +
+			'  您的选择：' +
 			totalAnswer[index].replace(/choices/g, '')
 	)
 	var wrongItemAnswers = ['A', 'B', 'C', 'D']

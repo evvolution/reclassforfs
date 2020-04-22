@@ -184,7 +184,7 @@ var fsquestions = {
         "type": 0,
         "video": "https://fsnewsres.foshanplus.com/news/e5e8a0e38c094e9c91e55178f81446ca.mp4",
         "poster":"./img/videoPoster_3.jpg",
-        "answer":"B",
+        "answer":"C",
 				"keys": ["马", "兔子", "猴子"]
 			},
 			{
