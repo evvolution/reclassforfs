@@ -2,6 +2,7 @@ function initBeginView(passIndex, answerResult) {
 	if (passIndex > 2) {
 		// 设置是查看分数还是生成海报
 		if (answerResult) {
+			finalScore = answerResult.score * 5
 			var nextPassBtn = document.getElementsByClassName('nextPassBtn')[0]
 			var checkScoreBtn = document.getElementsByClassName(
 				'checkScoreBtn'
@@ -10,7 +11,7 @@ function initBeginView(passIndex, answerResult) {
 				'createPosterBtn'
 			)[0]
 			nextPassBtn.style.display = 'none'
-			if (answerResult.score * 5 === 100) {
+			if (finalScore === 100) {
 				checkScoreBtn.style.display = 'none'
 				createPosterBtn.style.display = ''
 			} else {
@@ -106,7 +107,7 @@ function initScoreView(answerResult) {
 		}
 	})
 
-  // 隐藏下载按钮
+	// 隐藏下载按钮
 	var fs_device = getQueryVariable('fs_device')
 
 	if (fs_device) {
@@ -116,7 +117,11 @@ function initScoreView(answerResult) {
 }
 
 // 设置打卡页面数据
-function initClockView(name, content, school) {
+function initClockView(name, school) {
+	var content =
+		'在本次网上“开学第一课”中，你表现突出，成绩优异，获得' +
+		finalScore +
+		'分，特授予你“防疫小先锋”称号，以资鼓励。'
 	inputName = name
 	selectSchool = school
 	var contentDoms = Array.from($('.clockSection .clock-container p'))
@@ -152,3 +157,5 @@ function getQueryVariable(variable) {
 var inputName = ''
 // 选择学校
 var selectSchool = ''
+
+var finalScore = 0

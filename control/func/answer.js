@@ -89,7 +89,7 @@ function next() {
 	// 还未选择或者不是重置 不能下一题
 	if (!choiceSelection && choiceSelections.length === 0 && examIndex !== -1) {
 		console.log('还未选题')
-		return;
+		return
 	}
 	examIndex++
 	// 重置
@@ -149,14 +149,18 @@ function next() {
 
 // 检查每一关的结果
 function checkPassResult() {
-	bindsubmit(totalAnswer,()=>{
-		// 有奖牌
-		$.fn.fullpage.moveSectionDown()
-	},()=>{
-		// 失败无奖牌
-		$.fn.fullpage.silentMoveTo(2, 0)
-		nextPass(false)
-	})
+	bindsubmit(
+		totalAnswer,
+		() => {
+			// 有奖牌
+			$.fn.fullpage.moveSectionDown()
+		},
+		() => {
+			// 失败无奖牌
+			$.fn.fullpage.silentMoveTo(2, 0)
+			nextPass(false)
+		}
+	)
 }
 
 function refreshNextState() {
@@ -228,6 +232,7 @@ function createPoster() {
 	var user = {
 		name: inputName,
 		school: selectSchool,
+		score: finalScore,
 	}
 	// 传值
 	window.parent.postMessage(JSON.stringify(user), '*')
@@ -272,8 +277,6 @@ function actionIn(obj, actionName, time, speed) {
 	// 	$(obj).css({ visibility: 'visible' })
 	// }, 300)
 }
-
-
 
 /*obj,actionName,speed都是 string,time(秒)是int类型*/
 function actionOut(obj, actionName, time, speed, callBack) {

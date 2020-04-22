@@ -125,7 +125,7 @@ function start() {
     alert("请填写个人信息");
     return;
   } else {
-    initClockView(username, '在本次网上“开学第一课”中，你表现突出，成绩优异，获得满分，特授予你“防疫小先锋”称号，以资鼓励。', userschool)
+    initClockView(username, userschool)
 
     $.fn.fullpage.moveSectionDown();
   }
