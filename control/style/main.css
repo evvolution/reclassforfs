@@ -86,7 +86,7 @@ body{
   color: #333;
 }
 
-.questionSection .fp-tableCell,.clockSection .fp-tableCell,.pointSection .fp-tableCell,.passFinish .fp-tableCell {
+.questionSection .fp-tableCell,.clockSection .fp-tableCell,.pointSection .fp-tableCell,.passFinish .fp-tableCell,.jiyuSection .fp-tableCell {
   vertical-align: top!important;
 }
 
@@ -167,6 +167,7 @@ button:focus {
   width: 100%;
   overflow-x: hidden;
   position: relative;
+  margin-top: -20%;
 }
 .top-medalContainer .bg {
   width: 100%;
@@ -175,11 +176,12 @@ button:focus {
 .top-medalContainer .title {
   position: absolute;
   bottom: 55px;
-  line-height: 18px;
+  line-height: 25px;
   font-weight: 500;
   text-align: center;
   width: 100%;
   font-size: 18px;
+  white-space:pre-line;
 }
 .top-medalContainer .icon {
   width: 26%;
@@ -281,7 +283,6 @@ button:focus {
 .checkScoreBtn,.createPosterBtn {
   width: 100%;
   display: block;
-  margin-top: 10px;
 }
 
 .checkScoreBtn img,.createPosterBtn img {
@@ -401,4 +402,33 @@ button:focus {
   bottom: 0;
   left: 0;
   width: 100%;
+}
+
+/* 寄语 */
+#jiyuvideoContainer
+{
+  left: -24px;
+  width: 100vw;
+  height: 56.83vw;
+}
+
+.jiyuTitle,.jiyuDesc
+{
+  text-align: center;
+  color: #333;
+}
+
+.jiyuTitle
+{
+  font-size: 18px;
+  line-height: 28px;
+  margin: 18px auto 12px auto;
+  font-weight: 600;
+}
+
+.jiyuDesc
+{
+  font-size: 14px;
+  line-height: 28px;
+  margin-bottom: 8px;
 }

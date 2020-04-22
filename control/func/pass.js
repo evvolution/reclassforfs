@@ -1,25 +1,8 @@
 function initBeginView(passIndex, answerResult) {
 	if (passIndex > 2) {
 		// 设置是查看分数还是生成海报
-		if (answerResult) {
-			finalScore = answerResult.score * 5
-			var nextPassBtn = document.getElementsByClassName('nextPassBtn')[0]
-			var checkScoreBtn = document.getElementsByClassName(
-				'checkScoreBtn'
-			)[0]
-			var createPosterBtn = document.getElementsByClassName(
-				'createPosterBtn'
-			)[0]
-			nextPassBtn.style.display = 'none'
-			if (finalScore === 100) {
-				checkScoreBtn.style.display = 'none'
-				createPosterBtn.style.display = ''
-			} else {
-				checkScoreBtn.style.display = ''
-				createPosterBtn.style.display = 'none'
-			}
-		}
-    initClockView()
+		initClockView()
+		initLikeView()
 		return
 	}
 	var titleImg = $('#passBegin .titleImg')
@@ -38,9 +21,9 @@ function initPassView(passIndex) {
 	var topMedal = $('#passFinish .top-medalContainer .icon')
 	var bottomItems = Array.from($('#passFinish .bottom-medalContainer .item'))
 	topTitle.text(
-		'恭喜你完成第' +
+		'恭喜您完成第' +
 			topTitles[passIndex] +
-			'关， 成功获得一枚' +
+			'关， \n成功获得一枚' +
 			medalTitles[passIndex] +
 			'防疫勋章'
 	)
@@ -122,12 +105,12 @@ function initClockView(name, school) {
 	var content =
 		'在本次网上“开学第一课”中，你表现突出，成绩优异，获得' +
 		finalScore +
-    '分，'
-  if(finalScore === 100) {
-    content = content + '特授予你“防疫小先锋”称号，以资鼓励。'
-  }else {
-    content = content + '再接再厉。'
-  }
+		'分，'
+	if (finalScore === 100) {
+		content = content + '特授予你“防疫小先锋”称号，以资鼓励。'
+	} else {
+		content = content + '再接再厉。'
+	}
 	inputName = name ? name : inputName
 	selectSchool = school ? school : selectSchool
 	var contentDoms = Array.from($('.clockSection .clock-container p'))
@@ -191,18 +174,58 @@ function checkQuestionItem(index) {
 	})
 }
 
+function like() {
+	if (!isLike) {
+		isLike = true
+		bindLike()
+		var likebtn = $('.jiyuSection .likebtn img')
+		likebtn.attr('src', './img/liked.png')
+
+		var checkScoreBtn = document.getElementsByClassName('checkScoreBtn')[0]
+		var createPosterBtn = document.getElementsByClassName(
+			'createPosterBtn'
+		)[0]
+		if (finalScore === 100) {
+			checkScoreBtn.style.display = 'none'
+			createPosterBtn.style.display = ''
+		} else {
+			checkScoreBtn.style.display = ''
+			createPosterBtn.style.display = 'none'
+    }
+    
+    likeCount++
+    setLikeCount()
+	}
+}
+
 // 关闭错题
 function closeQuestionItem() {
 	var showWrongItem = document.getElementsByClassName('showWrongItem')[0]
 	showWrongItem.style.display = 'none'
 }
 
+function initLikeView() {
+	getLikeCount((data) => {
+    likeCount = data.vote_count
+    setLikeCount()
+	})
+}
+function setLikeCount() {
+  var likebtn = $('.jiyuSection #likeCount')
+	likebtn.text('*已有' + likeCount + '名师生为院士们点赞')
+}
+
+initLikeView()
 // 输入的名字
 var inputName = ''
 // 选择学校
 var selectSchool = ''
 
 var finalScore = 0
+
+var isLike = 0
+
+var likeCount = 0
 
 $('#exampleModalCenter').on('show.bs.modal', function (event) {
 	console.log('测试')

@@ -228,7 +228,7 @@ function checkScore() {
 
 // 打卡按钮
 function createPoster() {
-	$.fn.fullpage.moveTo(6, 0)
+	$.fn.fullpage.moveTo(7, 0)
 	var user = {
 		name: inputName,
 		school: selectSchool,
@@ -280,8 +280,6 @@ function actionIn(obj, actionName, time, speed) {
 
 /*obj,actionName,speed都是 string,time(秒)是int类型*/
 function actionOut(obj, actionName, time, speed, callBack) {
-	console.log('隐藏')
-	console.log(actionName + ' ' + time + 's' + ' ' + speed)
 	$(obj).css({
 		animation: actionName + ' ' + time + 's' + ' ' + speed,
 		'-webkit-animation': actionName + ' ' + time + 's' + ' ' + speed,

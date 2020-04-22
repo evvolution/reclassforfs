@@ -19,7 +19,6 @@
 <body>
   <div class="container-fluid">
     <div id="fullpage">
-
       <div class="fspsection section">
         <div class="noticeforinput">请填写你的信息</div>
         <div class="selectgroup form-group">
@@ -110,6 +109,21 @@
         <div class="nextPassBtn" onclick="nextPass(true)">
           <img src="./img/next-pass.png" alt="">
         </div>
+      </div>
+      <!--  寄语页 -->
+      <div class="fspsection section jiyuSection">
+        <video id="jiyuvideoContainer" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="none"
+          data-setup='{"example_option":true}' webkit-playsinline="true" playsinline="true" style="outline: none;"
+          poster="./img/jiyuPoster.jpg">
+          <source id="videoSource" src="http://fsnewsres.foshanplus.com/news/8a1aba68e4cb45eaa6ed2084c5ea9f24.mp4"
+            type="video/mp4" />
+        </video>
+        <div class="jiyuTitle">观看钟南山院士和李兰娟院士的寄语，<br>为院士点赞后方可查看成绩</div>
+
+        <div class="jiyuDesc" id="likeCount">已有10000人点赞</div>
+        <div id="infosetBtn" class="selectgroup likebtn" onclick="like()">
+          <img src="./img/like.png" style="width: 100%;" alt="">
+        </div>
         <div class="checkScoreBtn" style="display: none;" onclick="checkScore()">
           <img src="http://img.foshanplus.com/2020/pic/04/checkScore.png" alt="">
           <!-- <img src="./img/checkScore.png" alt=""> -->
@@ -148,6 +162,7 @@
           </div>
         </div>
       </div>
+
       <!-- 打卡页 -->
       <div class="fspsection section clockSection">
         <div class="clock-container">
