@@ -155,7 +155,7 @@ function getQueryVariable(variable) {
 	return false
 }
 
-打开错题
+// 打开错题
 function checkQuestionItem(index) {
 	var item = {}
 	if (index < 5) {
