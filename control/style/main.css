@@ -330,7 +330,12 @@ button:focus {
 }
 
 
-
+.scorePoster{
+  text-align: center;
+  margin: 0 auto;
+  height: 50px;
+  width: 120px;
+}
 
 
 /* 打卡页 */
