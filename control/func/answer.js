@@ -155,11 +155,11 @@ function checkPassResult() {
 			// 有奖牌
 			$.fn.fullpage.moveSectionDown()
 		},
-		() => {
-			// 失败无奖牌
-			$.fn.fullpage.silentMoveTo(2, 0)
-			nextPass(false)
-		}
+		// () => {
+		// 	// 失败无奖牌
+		// 	$.fn.fullpage.silentMoveTo(2, 0)
+		// 	nextPass(false)
+		// }
 	)
 }
 

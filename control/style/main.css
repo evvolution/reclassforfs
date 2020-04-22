@@ -99,7 +99,7 @@ body{
   height: auto;
   display: block;
   margin: 0 auto;
-  margin-top: -20px;
+  margin-top: -8%;
 }
 
 /* 开始答题 */
@@ -290,6 +290,45 @@ button:focus {
 }
 
 
+.showWrongItem 
+{
+  position: absolute;
+  z-index: 5;
+  width: 100vw;
+  height: 100vh;
+  left: 0px;
+  top: 0px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.showWrongItem img{
+  width: 80%;
+  height: auto;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  border-radius: 3px;
+}
+.showWrongItem .close {
+  width: 15%;
+  height: 10%;
+  right: 10%;
+  top: 20%;
+  position: absolute;
+  z-index: 1;
+}
+
+.showWrongItem .content
+{
+  position: absolute;
+  width: 80%;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  z-index: 1;
+  padding: 40px 10px 0 10px;
+}
+
 
 
 
@@ -345,6 +384,10 @@ button:focus {
   width: 100%;
   height: auto;
   margin-top: 15px;
+}
+
+#exampleModalCenter{
+  position: absolute;
 }
 
 .bottompic{

@@ -97,10 +97,12 @@ function initScoreView(answerResult) {
 	var details = answerResult.detail
 
 	var wrongContainer = $('.pointSection .wrongContainer')
-	details.forEach((element) => {
+	details.forEach((element, index) => {
 		if (!element.is_correct || element.is_correct === '0') {
 			var appendHtml =
-				'<div class="wrongItem">' +
+				'<div class="wrongItem" onclick="checkQuestionItem(' +
+				index +
+				')" data-toggle="modal" data-target="#exampleModalCenter">' +
 				element.id +
 				'<img src="./img/wrongItem.png" alt=""></div>'
 			wrongContainer.append(appendHtml)
@@ -153,9 +155,52 @@ function getQueryVariable(variable) {
 	return false
 }
 
+打开错题
+function checkQuestionItem(index) {
+	var item = {}
+	if (index < 5) {
+		item = totalPassExercises[0][index]
+	} else if (index < 15 && index >= 5) {
+		item = totalPassExercises[1][index - 5]
+	} else {
+		item = totalPassExercises[2][index - 15]
+	}
+	var showWrongItem = document.getElementsByClassName('showWrongItem')[0]
+	showWrongItem.style.display = ''
+	var wrongItemQuestion = $('.showWrongItem #wrongItemQuestion')
+	var yourAnswer = $('.showWrongItem #yourAnswer')
+	wrongItemQuestion.text(item.questions)
+
+	yourAnswer.text(
+		'正确答案是：' +
+			item.answer +
+			'  您的答案：' +
+			totalAnswer[index].replace(/choices/g, '')
+	)
+	var wrongItemAnswers = ['A', 'B', 'C', 'D']
+	wrongItemAnswers.forEach((element, index) => {
+		var wrongItemAnswer = $('.showWrongItem #wrongItemAnswer-' + element)
+		if (item.keys.length > index) {
+			wrongItemAnswer.text(element + '.' + item.keys[index])
+		} else {
+			wrongItemAnswer.text()
+		}
+	})
+}
+
+// 关闭错题
+function closeQuestionItem() {
+	var showWrongItem = document.getElementsByClassName('showWrongItem')[0]
+	showWrongItem.style.display = 'none'
+}
+
 // 输入的名字
 var inputName = ''
 // 选择学校
 var selectSchool = ''
 
 var finalScore = 0
+
+$('#exampleModalCenter').on('show.bs.modal', function (event) {
+	console.log('测试')
+})

@@ -28,6 +28,7 @@ var fsquestions = {
 				"type": 1,
         "video": "https://fsnewsres.foshanplus.com/news/843ac68e424d49f983a472ef6a6be344.mp4",
         "poster":"./img/videoPoster_1.jpg",
+        "answer":"A,B,C",
 				"keys": [
 					"佩戴时应根据脸型将折面充分展开，把鼻、嘴、下颌完全包住，然后压紧鼻夹",
 					"一次性口罩有里外之分，浅色面有吸湿功能，应该贴着嘴鼻，使深色面朝外",
@@ -39,6 +40,7 @@ var fsquestions = {
 				"type": 0,
         "video": "https://fsnewsres.foshanplus.com/news/843ac68e424d49f983a472ef6a6be344.mp4",
         "poster":"./img/videoPoster_1.jpg",
+        "answer":"B",
 				"keys": [
 					"随意丢弃在垃圾桶",
 					"对于普通人日常使用过的口罩，按照生活垃圾分类的要求，可以直接丢入“其它垃圾”桶，严禁回收及分拣",
@@ -50,6 +52,7 @@ var fsquestions = {
 				"type": 0,
         "video": "https://fsnewsres.foshanplus.com/news/8b06672f337c463fae6959e9919fbc92.mp4",
         "poster":"./img/videoPoster_2.jpg",
+        "answer":"B",
 				"keys": ["能", "尽量不"]
 			},
 			{
@@ -57,6 +60,7 @@ var fsquestions = {
 				"type": 0,
         "video": "https://fsnewsres.foshanplus.com/news/8b06672f337c463fae6959e9919fbc92.mp4",
         "poster":"./img/videoPoster_2.jpg",
+        "answer":"A",
 				"keys": ["10秒", "5秒"]
 			},
 			{
@@ -64,6 +68,7 @@ var fsquestions = {
 				"type": 1,
         "video": "https://fsnewsres.foshanplus.com/news/8b06672f337c463fae6959e9919fbc92.mp4",
         "poster":"./img/videoPoster_2.jpg",
+        "answer":"A,B,C",
 				"keys": [
 					"洗手掌：流水湿润双手，涂抹洗手液(或肥皂)，掌心相对，手指并拢相互揉搓",
 					"洗掌侧指缝：掌心相对，双手交叉沿指缝相互揉搓",
@@ -73,7 +78,8 @@ var fsquestions = {
 		],
 		[
 			{
-				"questions": "6.离家返校前如何做?(多选)",
+        "questions": "6.离家返校前如何做?(多选)",
+        "answer":"A,B,C",
 				"type": 1,
 				"keys": [
 					"准备好相关的学习用品",
@@ -83,7 +89,8 @@ var fsquestions = {
 			},
 			{
 				"questions": "7.进入校园前如何做?(多选)",
-				"type": 1,
+        "type": 1,
+        "answer":"A,B,C",
 				"keys": [
 					"保持1米以上间隔排队进行校门测温晨检，体温正常进校门",
 					"若体温（腋下）≥37.3℃，按要求进行对应的医疗就诊",
@@ -91,7 +98,8 @@ var fsquestions = {
 				]
 			},
 			{
-				"questions": "8.室内课怎么上?(多选)",
+        "questions": "8.室内课怎么上?(多选)",
+        "answer":"A,B,C",
 				"type": 1,
 				"keys": [
 					"在会议室、课室、宿舍等封闭、人员密集空间或与他人近距离接触（小于等于1米）时应佩戴口罩",
@@ -100,7 +108,8 @@ var fsquestions = {
 				]
 			},
 			{
-				"questions": "9.大型活动怎么举行?(多选)",
+        "questions": "9.大型活动怎么举行?(多选)",
+        "answer":"A,B,C",
 				"type": 1,
 				"keys": [
 					"不举办室内聚集性的活动",
@@ -109,7 +118,8 @@ var fsquestions = {
 				]
 			},
 			{
-				"questions": "10.体育锻炼及作息如何开展?(多选)",
+        "questions": "10.体育锻炼及作息如何开展?(多选)",
+        "answer":"A,B,C",
 				"type": 1,
 				"keys": [
 					"学校正常开展体育课，确保体育与健康课程落实",
@@ -118,7 +128,8 @@ var fsquestions = {
 				]
 			},
 			{
-				"questions": "11.校园环境卫生如何保障?(多选)",
+        "questions": "11.校园环境卫生如何保障?(多选)",
+        "answer":"A,B,C",
 				"type": 1,
 				"keys": [
 					"疫情解除前停止使用集中空调通风系统，重新开启使用前应规范清洗和消毒",
@@ -127,7 +138,8 @@ var fsquestions = {
 				]
 			},
 			{
-				"questions": "12.课间活动如何开展?(多选)",
+        "questions": "12.课间活动如何开展?(多选)",
+        "answer":"B,C",
 				"type": 1,
 				"keys": [
 					"课间休息时串班、串年级",
@@ -136,7 +148,8 @@ var fsquestions = {
 				]
 			},
 			{
-				"questions": "13.就餐如何安排?(多选)",
+        "questions": "13.就餐如何安排?(多选)",
+        "answer":"A,B",
 				"type": 1,
 				"keys": [
 					"规范就餐流程，尽量集中分餐、送餐到班，要分散就餐，避免集中",
@@ -145,7 +158,8 @@ var fsquestions = {
 				]
 			},
 			{
-				"questions": "14.放学回家如何做?(多选)",
+        "questions": "14.放学回家如何做?(多选)",
+        "answer":"A,B,C",
 				"type": 1,
 				"keys": [
 					"放学回家不在外逗留",
@@ -154,7 +168,8 @@ var fsquestions = {
 				]
 			},
 			{
-				"questions": "15.个人日常疫情防控要做到哪些?(多选)",
+        "questions": "15.个人日常疫情防控要做到哪些?(多选)",
+        "answer":"A,C",
 				"type": 1,
 				"keys": [
 					"注册“粤康码”，每天登录依时亮码（可由家长代劳）",
@@ -169,6 +184,7 @@ var fsquestions = {
         "type": 0,
         "video": "https://fsnewsres.foshanplus.com/news/e5e8a0e38c094e9c91e55178f81446ca.mp4",
         "poster":"./img/videoPoster_3.jpg",
+        "answer":"B",
 				"keys": ["马", "兔子", "猴子"]
 			},
 			{
@@ -176,6 +192,7 @@ var fsquestions = {
         "type": 1,
         "video": "https://fsnewsres.foshanplus.com/news/e5e8a0e38c094e9c91e55178f81446ca.mp4",
         "poster":"./img/videoPoster_3.jpg",
+        "answer":"A,B,C,D",
 				"keys": [
 					"积极自我暗示",
 					"接纳情绪",
@@ -188,6 +205,7 @@ var fsquestions = {
         "type": 0,
         "video": "https://fsnewsres.foshanplus.com/news/e5e8a0e38c094e9c91e55178f81446ca.mp4",
         "poster":"./img/videoPoster_3.jpg",
+        "answer":"A",
 				"keys": [
 					"双手放在腹部",
 					"通过鼻子吸气，腹部鼓起来",
@@ -199,6 +217,7 @@ var fsquestions = {
         "type": 0,
         "video": "https://fsnewsres.foshanplus.com/news/e5e8a0e38c094e9c91e55178f81446ca.mp4",
         "poster":"./img/videoPoster_3.jpg",
+        "answer":"A",
 				"keys": ["对", "错"]
 			},
 			{
@@ -206,6 +225,7 @@ var fsquestions = {
         "type": 0,
         "video": "https://fsnewsres.foshanplus.com/news/e5e8a0e38c094e9c91e55178f81446ca.mp4",
         "poster":"./img/videoPoster_3.jpg",
+        "answer":"A",
 				"keys": ["对", "错"]
 			}
 		]

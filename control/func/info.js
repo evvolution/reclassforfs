@@ -67,19 +67,19 @@ function bindsubmit(answers, successBack, failBack) {
       }
     });
   }else if (answers.length === 5) {
-    if (jsonAnswer === '{"1":"A,B,C","2":"B","3":"B","4":"A","5":"A,B,C"}') {
+    // if (jsonAnswer === '{"1":"A,B,C","2":"B","3":"B","4":"A","5":"A,B,C"}') {
       // 第一关
       successBack()
-    } else {
-      failBack()
-    }
+    // } else {
+    //   failBack()
+    // }
   } else {
-    if (jsonAnswer === '{"1":"A,B,C","2":"B","3":"B","4":"A","5":"A,B,C","6":"A,B,C","7":"A,B,C","8":"A,B,C","9":"A,B,C","10":"A,B,C","11":"A,B,C","12":"B,C","13":"A,B","14":"A,B,C","15":"A,C"}') {
+    // if (jsonAnswer === '{"1":"A,B,C","2":"B","3":"B","4":"A","5":"A,B,C","6":"A,B,C","7":"A,B,C","8":"A,B,C","9":"A,B,C","10":"A,B,C","11":"A,B,C","12":"B,C","13":"A,B","14":"A,B,C","15":"A,C"}') {
       // 第二关
       successBack()
-    } else {
-      failBack()
-    }
+    // } else {
+    //   failBack()
+    // }
   }
 
 
