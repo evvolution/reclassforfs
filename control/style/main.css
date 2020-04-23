@@ -228,7 +228,7 @@ button:focus {
   color: #333;
   font-weight: 400;
   text-align: center;
-  margin-top: 132px;
+  margin-top: 40px;
 }
 
 .pointSection .scoreDesc {
@@ -245,7 +245,7 @@ button:focus {
   line-height: 28px;
   color: #333;
   font-weight: bolder;
-  margin: 43px 0 10px 0;
+  margin: 10px 0 10px 0;
 }
 .pointSection .wrongContainer {
   margin-bottom: 10px;
