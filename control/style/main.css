@@ -52,7 +52,7 @@ body{
     border-radius: 37.5px;
     background-color: #fff;
     font-size: 16px;
-    margin: 15px 0;
+    margin: 6px 0;
     padding: 6px 0;
     position: relative;
     min-height: 48px;
@@ -81,7 +81,7 @@ body{
 .choicedetail {
   width: 100%;
   padding: 0px 12px 0px 50px;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 22px;
   color: #333;
 }
@@ -150,7 +150,7 @@ button:focus {
 }
 
 #dis-nextBtn,#nextBtn,.nextPassBtn {
-  margin-top: 12px;
+  margin-top: 5px;
   float: right;
   overflow: hidden;
   width: 40%;
