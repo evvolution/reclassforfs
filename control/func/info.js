@@ -39,8 +39,8 @@ function test() {
 function bindsubmit(answers, successBack, failBack) {
 	var answerDic = {}
 	answers.forEach((element, index) => {
-		element = element.replace(/choices/g, '')
-		answerDic[index + 1] = element
+		var newElement = element.replace(/choices/g, '')
+		answerDic[index + 1] = newElement
 	})
 	var jsonAnswer = JSON.stringify(answerDic)
 	if (answers.length === 20) {

@@ -85,9 +85,9 @@ line-height: 22px;
 color: #333;
 }
 
-.questionSection .fp-tableCell,.clockSection .fp-tableCell,.pointSection .fp-tableCell,.passFinish .fp-tableCell,.jiyuSection .fp-tableCell {
+/* .questionSection .fp-tableCell,.clockSection .fp-tableCell,.pointSection .fp-tableCell,.passFinish .fp-tableCell,.jiyuSection .fp-tableCell {
 vertical-align: top!important;
-}
+} */
 
 /* 开始答题 */
 /* #passBegin {
