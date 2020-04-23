@@ -48,12 +48,12 @@ var fsquestions = {
 				]
 			},
 			{
-				"questions": "3.双手洗干净后，能否用手接触水龙头?",
+				"questions": "3.双手洗干净并且擦干后，能否用手接触水龙头?",
 				"type": 0,
         "video": "https://fsnewsres.foshanplus.com/news/8b06672f337c463fae6959e9919fbc92.mp4",
         "poster":"./img/videoPoster_2.jpg",
         "answer":"B",
-				"keys": ["能", "尽量不"]
+				"keys": ["能", "不要"]
 			},
 			{
 				"questions": "4.在洗擦手的过程中，至少要洗几秒?",
