@@ -180,7 +180,7 @@ function like() {
 		isLike = true
 		bindLike()
 		var likebtn = $('.jiyuSection .likebtn img')
-		likebtn.attr('src', './img/liked.png')
+		likebtn.attr('src', './img/liked_new.png')
 
 		var checkScoreBtn = document.getElementsByClassName('checkScoreBtn')[0]
 		var createPosterBtn = document.getElementsByClassName(
