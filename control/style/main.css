@@ -51,7 +51,7 @@ margin: 40px 0 60px;
   border-radius: 37.5px;
   background-color: #fff;
   font-size: 16px;
-  margin: 15px 0;
+  margin: 5px 0;
   padding: 6px 0;
   position: relative;
   min-height: 48px;
@@ -80,7 +80,7 @@ height: 40px;
 .choicedetail {
 width: 100%;
 padding: 0px 12px 0px 50px;
-font-size: 16px;
+font-size: 14px;
 line-height: 22px;
 color: #333;
 }
@@ -148,7 +148,7 @@ display: none;
 }
 
 #dis-nextBtn,#nextBtn,.nextPassBtn {
-margin-top: 12px;
+margin-top: 5px;
 float: right;
 overflow: hidden;
 width: 40%;
