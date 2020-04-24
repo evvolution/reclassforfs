@@ -47,9 +47,6 @@ margin: 40px 0 60px;
   line-height: 28px;
 }
 
-.questionContent {
-  height: 100vh;
-}
 .choices{
   border-radius: 37.5px;
   background-color: #fff;
