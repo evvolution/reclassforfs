@@ -93,12 +93,12 @@ function initScoreView(answerResult) {
 	})
 
 	// 隐藏下载按钮
-	var fs_device = getQueryVariable('fs_device')
+	// var fs_device = getQueryVariable('fs_device')
 
-	if (fs_device) {
+	// if (fs_device) {
 		var downloadBtn = document.getElementsByClassName('downloadBtn')[0]
 		downloadBtn.style.display = 'none'
-	}
+	// }
 }
 
 // 设置打卡页面数据
