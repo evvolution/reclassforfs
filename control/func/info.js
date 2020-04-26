@@ -2,7 +2,8 @@
  * note: 复学第一课控制
  */
 
-var link = 'http://server.foshanplus.com/'
+var link = 'http://server.foshanplus.com/';
+var link2 = 'https://server.foshanplus.com/';
 var dis = []
 var sch = []
 var pIndex = -1
@@ -86,7 +87,7 @@ function bindLike() {
 	$.ajax({
 		type: 'get',
 		async: true,
-		url: link + '/exam/add_vote_star/?',
+		url: link2 + '/exam/add_vote_star/?',
 		data: {
 			exam_id: '28',
 			openid: userid,
@@ -100,7 +101,7 @@ function getLikeCount(successBack) {
 	$.ajax({
 		type: 'get',
 		async: true,
-		url: link + '/exam/get_vote/?',
+		url: link + 'exam/get_vote/?',
 		data: {
 			exam_id: '28',
 		},
