@@ -3,7 +3,7 @@
  */
 
 var link = 'http://server.foshanplus.com/';
-var link2 = 'https://server.foshanplus.com/';
+// var link2 = 'https://server.foshanplus.com/';
 var dis = []
 var sch = []
 var pIndex = -1
@@ -87,7 +87,7 @@ function bindLike() {
 	$.ajax({
 		type: 'get',
 		async: true,
-		url: link2 + '/exam/add_vote_star/?',
+		url: link + 'exam/add_vote_star/?',
 		data: {
 			exam_id: '28',
 			openid: userid,
