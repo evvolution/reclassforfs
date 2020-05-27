@@ -2,7 +2,7 @@
  * note: 复学第一课控制
  */
 
-var link = 'http://server.foshanplus.com/';
+var link = 'https://server.foshanplus.com/';
 // var link2 = 'https://server.foshanplus.com/';
 var dis = []
 var sch = []
