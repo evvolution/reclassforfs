@@ -83,7 +83,7 @@ function bindsubmit(answers, successBack, failBack) {
 }
 
 function bindLike() {
-  userid = 'openid'
+  var userid = 'openid'
 	$.ajax({
 		type: 'get',
 		async: true,
