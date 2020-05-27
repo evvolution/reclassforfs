@@ -38,7 +38,9 @@ function test() {
 }
 
 function bindsubmit(answers, successBack, failBack) {
-	var answerDic = {}
+  var answerDic = {}
+  userid = 'openid'
+
 	answers.forEach((element, index) => {
 		var newElement = element.replace(/choices/g, '')
 		answerDic[index + 1] = newElement
@@ -46,7 +48,6 @@ function bindsubmit(answers, successBack, failBack) {
 	var jsonAnswer = JSON.stringify(answerDic)
 	if (answers.length === 20) {
 		//  全部答完
-		userid = getParam('openid')
 		$.ajax({
 			type: 'post',
 			async: true,
@@ -83,7 +84,7 @@ function bindsubmit(answers, successBack, failBack) {
 }
 
 function bindLike() {
-  var userid = 'openid'
+  userid = 'openid'
 	$.ajax({
 		type: 'get',
 		async: true,
